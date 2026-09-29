@@ -1,5 +1,36 @@
 # Changelog
 
+## [1.91.7.0] - 2026-09-28
+QA can test APIs, CLIs, jobs, workers and webhooks with the project's own tools,
+without starting a browser. Review and ship now run bounded exploratory checks,
+and every ship audits relevant documentation before final verification and publication.
+
+### Added
+
+- Functional QA checks native outputs and durable effects, including invalid inputs, authorization, cancellation, retries, duplicate delivery, concurrency and recovery. Reports distinguish failures, blocked probes and untested contracts; browser and functional results stay separate.
+- Exploratory QA turns observations into targeted probes and proposed regression tests. Written evidence checkpoints connect each observed result to the next probe and are linked from the final report. Authorized repairs require a reproduced defect, a regression that fails before the repair, and successful regression, original-probe and adjacent-path checks when the native test infrastructure supports them.
+
+### Changed
+
+- `/qa` and `/qa-only` load instructions for the selected surface on each supported host. Functional and report-only runs never bootstrap a framework or inherit browser setup permission; `/qa-only` preserves product code, tests, configuration and Git state.
+- `/review` and `/ship` run bounded exploration even on small non-browser diffs without a plan or server. Required checks remain required when blocked or unfinished, and proposed tests retain the parent's approval gates.
+- Review collects checklist, specialist, QA and adversarial findings before one parent-owned fix phase. Re-review keeps the same three-cycle limit, reruns affected probes and records incomplete coverage honestly.
+- Every ship consumes a completed documentation audit before final checks and publication, including uncommitted changes and existing-PR or repeat runs. Failed, stale or unsettled child results cannot silently become a clean audit; the parent retains release metadata and Git ownership.
+
+### Fixed
+
+- Report-only QA completes its scope and method Reads before setup, and preserves exact public fixture paths in evidence instead of inventing redacted paths. Actual secrets and private payloads remain protected.
+- Ship's workflow quality judge uses a 64k streamed, structured response within its existing deadline; other judges retain their 8k allowance. Cache identity includes the actual cap, transport and response contract, and incomplete or malformed scores remain failures.
+- Repeated QA runs preserve prior reports, baselines and exploration notes. Browser techniques follow the same checkpointed probe order as functional QA, and mixed reports keep each surface's evidence and scores separate.
+- Ship's two-pass test-generation allowance includes the initial attempt, failures and zero-test results. Duplicate design findings share one action while retaining both reviewers' evidence, statistics and the stricter approval requirement.
+- Ship keeps repair and late-change instructions in the steps that own them. Nested repairs preserve their return destination, and release preparation requires matching review records before version or documentation writes.
+- Reusing skipped shared-code advice now relies on executable checks of the captured branch and eligible raw source evidence. Unsupported Git states, transformed paths and records without trusted coverage provenance cannot certify a previous decision.
+- Paid-test `--list` also stays read-only with a saved plan and selected slice: it validates and lists the selected work without API preflight, test launches or result files.
+- Functional-QA test fixtures enforce their declared foreground command boundary before execution, and shared native-event decoding rejects malformed or incomplete evidence while preserving caller-specific handoff rules.
+- Native plan fixtures accept byte-exact seeds inside Claude's paste envelope without accepting fused or changed content. QA fixture completion avoids duplicating its checkpoint ledger, and caller fixtures distinguish absolute deadlines from start times.
+- Free tests retain private full logs, fail when evidence cannot be saved, and give an actionable recovery step. Linux and Windows CI collect the retained logs. Refreshed timings make new fast regressions reachable through the existing quick lane without removing complete-suite coverage.
+- The Ubicloud wrapper retrieves retained free-test logs and any retry ledger before destroying its VM.
+
 ## [1.91.6.0] - 2026-09-28
 
 PR eval slices are balanced by how long each eval actually takes, so the slowest slice no longer carries most of the run.
