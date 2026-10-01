@@ -540,9 +540,9 @@ Sanitize every query before it leaves the machine: strip hostnames, IPs, file pa
 ## PRE-REVIEW SYSTEM AUDIT (before Step 0)
 Before anything else, audit the system for review context. Run:
 ```
-git log --oneline -30                          # Recent history
-git diff <base> --stat                           # What's already changed
-git stash list                                 # Any stashed work
+git log --oneline -30  # Recent history
+git diff <base> --stat  # What's already changed
+git stash list  # Any stashed work
 grep -r "TODO\|FIXME\|HACK\|XXX" -l --exclude-dir=node_modules --exclude-dir=vendor --exclude-dir=.git . | head -30
 git log --since=30.days --name-only --format="" | sort | uniq -c | sort -rn | head -20  # Recently touched files
 ```
@@ -1027,7 +1027,8 @@ Follow the preamble's session rules; `CONDUCTOR_SESSION: true` changes transport
      added capability → SELECTIVE EXPANSION; fix/refactor → HOLD SCOPE.
    In the Recommendation's `because` clause, connect a concrete plan fact or
    constraint to this mode's actual benefit or tradeoff, not just its count/category.
-3. Resolve that recommendation. When `QUESTION_TUNING: true`, first check `question_id=plan-ceo-review-mode` through the preamble.
+3. Resolve that recommendation. When `QUESTION_TUNING: true`, first check `question_id=plan-ceo-review-mode` through the preamble's
+   `gstack-question-preference --check`.
    A check that exits 0 with `AUTO_DECIDE` selects the recommendation; go to the automatic handoff in
    step 4. When tuning is false, omit the lookup.
    Without that successful check, offer all four modes in one AskUserQuestion,
@@ -1035,7 +1036,7 @@ Follow the preamble's session rules; `CONDUCTOR_SESSION: true` changes transport
    wins. When `QUESTION_TUNING: true`, include `<gstack-qid:plan-ceo-review-mode>`.
    These modes differ in kind, not coverage; do NOT score completeness.
 
-4. **Mode handoff:** After selection, send brief chat before tools or further questions: the mode's application and rationale; every governing approved row's ID, answer reference and accepted scope. Keep rows separate.
+4. **Mode handoff:** After selection, send brief chat before tools or further questions: the mode's application and rationale; every governing approved row's ID, answer reference and accepted scope. Keep rows separate. Begin with the exact matching line below:
 - `plan-ceo-review-mode: AUTO_DECIDE`: `Auto-decided review mode → <selected mode> (your preference). Change with /plan-tune. Approved decisions: <rows or none>. <Application and rationale>.`
 - Other selections: `Mode: <selected mode>; approved decisions: <rows or none>. <Application and rationale>.`
 
@@ -1078,14 +1079,14 @@ In expansion modes, extend 0F's pending list.
 1. **10x check:** Describe 10x value for 2x effort.
 2. **Platonic ideal:** What would the best engineer with unlimited time and perfect taste build? Start with the user's experience.
 3. **Delight scan:** List at least 5 adjacent 30-minute improvements that would delight the user.
-4. **Expansion opt-in ceremony:** Present visions and individual proposals; enthusiastically explain each one's value. The user decides.
+4. **Expansion opt-in ceremony:** Lead each proposal with the felt user experience, then shape, effort and impact. The user decides.
 
 **For SELECTIVE EXPANSION:**
 1. Run all three HOLD SCOPE checks below, including their defer/keep decisions.
 2. Describe 10x ambition, run the delight scan and assess platform potential. Candidates stay pending until scope answers.
 3. **Cherry-pick ceremony:** Use 0F with S/M/L/XL effort and risk. For more than 8, present the top 5–6; offer the rest on request.
 
-For both expansion modes, ask separately for each addition: **A)** Add to this plan's scope **B)** Defer to TODOS.md **C)** Skip. Accepted items govern the remaining sections.
+For both expansion modes, ask separately for each addition, in turn, no pacing menu: **A)** Add to this plan's scope **B)** Defer to TODOS.md **C)** Skip. Accepted items govern the remaining sections.
 
 **For HOLD SCOPE** — run this:
 1. Complexity check: at more than 8 files or more than 2 new classes/services, challenge whether fewer moving parts achieve the same goal.

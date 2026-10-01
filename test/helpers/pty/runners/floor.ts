@@ -16,7 +16,7 @@ import { isDeepStrictEqual } from 'node:util';
 import { randomUUID } from 'node:crypto';
 import { capturePlanCountQuestion, createPlanCountPermissionGuard, matchesNativePlanQuestion, planCountPrerequisitePick, planCountQuestionInput } from '../auq';
 import { resolveClaudeBinary } from '../binary';
-import { designReviewSetupAUQ } from '../boundaries';
+import { pickDesignFocusAll } from '../boundaries';
 import { SANCTIONED_WRITE_SUBSTRINGS, isProseAUQVisible, planCountSubmissionInput } from '../classify';
 import type { ClaudePtySession } from '../launch';
 import { isNumberedOptionListVisible, isPermissionDialogVisible, isPlanReadyVisible, isRejectedSlashCommand, stripPtyResidue } from '../screen';
@@ -168,6 +168,10 @@ export async function runPlanSkillFloorCheck(opts: PlanSkillFloorOptions): Promi
     'Proceed directly to the requested review; skip the optional /office-hours prerequisite.',
     'This actor has already declined routing setup, cross-project recall and outside reviewers.',
     'Preserve the supplied product scope. For review-mode questions choose HOLD SCOPE (CEO), DX POLISH (DX), or the full BIG CHANGE review (Eng). Design: review all seven dimensions.',
+    // Runs 36626737820 and 36776104571: CEO read scope preservation as approving
+    // approach A, so the seeded premise gap never reached a question. Run 36794871032:
+    // CEO read this request as supplying every answer up front and asked nothing.
+    ...(opts.skillName === 'plan-ceo-review' ? ['Preserving scope does not approve the plan\'s premise, approach or any remedy. This request answers only the routing, recall, outside-reviewer and review-mode questions named above.'] : []),
     ...(opts.productType === 'sdk-documentation' ? [
       'Product type is confirmed: SDK quickstart documentation, with the complete journey to the first SDK call as context. If asked to classify, choose SDK + Docs when offered, otherwise Documentation. This confirms the review lens; it does not expand the plan.',
       'Target persona is confirmed: a hands-on developer integrating this SDK for the first time, trying to make one successful call. Product type and persona setup are already answered; proceed to reviewing the supplied plan.',
@@ -423,11 +427,9 @@ function floorQuestion(run: FloorRun, session: ClaudePtySession, currentCalls: N
     const question = pendingQuestion.questions[index]!;
     const key = `${pendingQuestion.sessionId}:${pendingQuestion.toolUseId}`;
     const chosen = run.setupChoices.get(key) ?? new Set<number>();
-    const allDesign = opts.skillName === 'plan-design-review' && designReviewSetupAUQ(fp)
-      ? question.options.flatMap((option, i) => /^(?:Review )?All 7 (?:design )?(?:dimensions|passes)(?:\s*\(recommended\))?$/i.test(option.label.trim()) ? [i + 1] : []) : [];
     const pick = pickPlanFloorMode(opts.skillName, question) ?? planCountPrerequisitePick(fp, fp)
       ?? (opts.skillName === 'plan-devex-review' ? pickPlanFloorProductType(question, opts.productType) : null)
-      ?? (allDesign.length === 1 ? allDesign[0]! : null);
+      ?? (opts.skillName === 'plan-design-review' ? pickDesignFocusAll(question) : null);
     if (pick !== null) {
       if (!chosen.has(index)) {
         session.send(planCountQuestionInput(viewport, fp, pick));

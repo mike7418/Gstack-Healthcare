@@ -21,8 +21,7 @@
  * Each test lists the file patterns that, if changed, require the test to run.
  */
 export const E2E_TOUCHFILES: Record<string, string[]> = {
-  'ship-skipped-queued-finding': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-    'package.json', 'bun.lock', '.github/docker/Dockerfile.ci',
+  'ship-skipped-queued-finding': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'package.json', 'bun.lock', '.github/docker/Dockerfile.ci',
     'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts', 'scripts/resolvers/sections.ts', 'scripts/resolvers/index.ts',
     'scripts/resolvers/types.ts', 'scripts/gen-skill-docs.ts', 'scripts/host-config.ts',
     'scripts/discover-skills.ts', 'hosts/claude.ts', 'hosts/index.ts', 'hosts/define-host.ts',
@@ -42,14 +41,14 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   'shared-libs-review-path-eligibility': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'review/**', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts', 'scripts/resolvers/review-army.ts', 'lib/review-evidence.ts', 'bin/gstack-review-log', 'bin/gstack-review-read', 'bin/gstack-wtree', 'test/helpers/shared-libs-eval-fixture.ts',  'test/skill-e2e-shared-libs-paths.test.ts', 'test/helpers/shared-libs-path-fixture.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/agent-sdk-runner.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts', 'test/fixtures/shared-libs-index-flags-*.json',   'test/fixtures/shared-libs-resolved-reads-public.json', 'test/helpers/shared-libs-review-start-evidence.ts'],
   'shared-libs-review-index-flags': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'review/**', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts', 'scripts/resolvers/review-army.ts', 'lib/review-evidence.ts', 'bin/gstack-review-log', 'bin/gstack-review-read', 'bin/gstack-wtree', 'test/helpers/shared-libs-eval-fixture.ts',  'test/skill-e2e-shared-libs-paths.test.ts', 'test/helpers/shared-libs-path-fixture.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/agent-sdk-runner.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts', 'test/fixtures/shared-libs-index-flags-*.json',  'test/fixtures/shared-libs-paths-max-turns-public.json',  'test/fixtures/shared-libs-resolved-reads-public.json', 'test/helpers/shared-libs-review-start-evidence.ts'],
   'shared-libs-review-prior-coverage': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'review/**', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts', 'scripts/resolvers/review-army.ts', 'lib/review-evidence.ts', 'bin/gstack-review-log', 'bin/gstack-review-read', 'bin/gstack-wtree', 'test/helpers/shared-libs-eval-fixture.ts',  'test/skill-e2e-shared-libs-paths.test.ts', 'test/helpers/shared-libs-path-fixture.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/agent-sdk-runner.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts', 'test/fixtures/shared-libs-index-flags-*.json',   'test/fixtures/shared-libs-resolved-reads-public.json', 'test/helpers/shared-libs-review-start-evidence.ts'],
-  'shared-libs-codex-read-only': ['deslop-shared-libs/**', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/index.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/shared-libs-eval-fixture.ts', 'test/helpers/codex-session-runner.ts', 'test/helpers/skill-fixture.ts', 'test/helpers/hermetic-env.ts', 'test/helpers/eval-budgets.ts', 'test/codex-e2e-shared-libs.test.ts',  'test/helpers/e2e-gate.ts', 'hosts/codex.ts', 'hosts/define-host.ts', 'scripts/resolvers/constants.ts', 'test/fixtures/shared-libs-readonly-substitution-ci16358.json', 'test/helpers/agent-sdk-runner.ts'],
+  'shared-libs-codex-read-only': ['deslop-shared-libs/**', 'bin/gstack-safe-git', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/index.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/shared-libs-eval-fixture.ts', 'test/helpers/codex-session-runner.ts', 'test/helpers/skill-fixture.ts', 'test/helpers/hermetic-env.ts', 'test/helpers/eval-budgets.ts', 'test/codex-e2e-shared-libs.test.ts',  'test/helpers/e2e-gate.ts', 'hosts/codex.ts', 'hosts/define-host.ts', 'scripts/resolvers/constants.ts', 'test/fixtures/shared-libs-readonly-substitution-ci16358.json', 'test/helpers/agent-sdk-runner.ts'],
   // Shared-code audit and scoped review lifecycle
-  'shared-libs-read-only': ['deslop-shared-libs/**', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/index.ts', 'test/helpers/shared-libs-eval-fixture.ts',  'test/skill-e2e-shared-libs.test.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts', 'test/fixtures/shared-libs-readonly-substitution-ci16358.json', 'test/helpers/agent-sdk-runner.ts', 'test/helpers/shared-libs-review-start-evidence.ts', 'test/helpers/shared-libs-path-fixture.ts'],
-  'shared-libs-unsupported-git': ['deslop-shared-libs/**', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/index.ts', 'test/helpers/shared-libs-eval-fixture.ts',  'test/skill-e2e-shared-libs.test.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts', 'test/fixtures/shared-libs-readonly-substitution-ci16358.json', 'test/helpers/agent-sdk-runner.ts', 'test/helpers/shared-libs-review-start-evidence.ts', 'test/helpers/shared-libs-path-fixture.ts'],
+  'shared-libs-read-only': ['deslop-shared-libs/**', 'bin/gstack-safe-git', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/index.ts', 'test/helpers/shared-libs-eval-fixture.ts',  'test/skill-e2e-shared-libs.test.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts', 'test/fixtures/shared-libs-readonly-substitution-ci16358.json', 'test/helpers/agent-sdk-runner.ts', 'test/helpers/shared-libs-review-start-evidence.ts', 'test/helpers/shared-libs-path-fixture.ts'],
+  'shared-libs-unsupported-git': ['deslop-shared-libs/**', 'bin/gstack-safe-git', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/index.ts', 'test/helpers/shared-libs-eval-fixture.ts',  'test/skill-e2e-shared-libs.test.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts', 'test/fixtures/shared-libs-readonly-substitution-ci16358.json', 'test/helpers/agent-sdk-runner.ts', 'test/helpers/shared-libs-review-start-evidence.ts', 'test/helpers/shared-libs-path-fixture.ts'],
   'shared-libs-review-lifecycle': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'deslop-shared-libs/**', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/index.ts', 'test/helpers/shared-libs-eval-fixture.ts',  'review/**', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts', 'scripts/resolvers/review-army.ts', 'lib/review-evidence.ts', 'bin/gstack-review-log', 'bin/gstack-review-read', 'bin/gstack-wtree', 'test/skill-e2e-shared-libs.test.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/agent-sdk-runner.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts', 'test/fixtures/shared-libs-index-flags-*.json', 'test/helpers/shared-libs-path-fixture.ts',  'test/fixtures/shared-libs-lifecycle-r59-stage-scope-public.json',  'test/helpers/shared-libs-review-start-evidence.ts'],
   'shared-libs-review-revalidation': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'deslop-shared-libs/**', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/index.ts', 'test/helpers/shared-libs-eval-fixture.ts',  'review/**', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts', 'scripts/resolvers/review-army.ts', 'lib/review-evidence.ts', 'bin/gstack-review-log', 'bin/gstack-review-read', 'bin/gstack-wtree', 'test/skill-e2e-shared-libs.test.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/agent-sdk-runner.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts', 'test/helpers/shared-libs-review-start-evidence.ts',  'test/fixtures/shared-libs-review-start-public.json',  'test/fixtures/shared-libs-revalidation-max-turns-public.json', 'test/fixtures/shared-libs-index-flags-*.json',  'test/helpers/shared-libs-path-fixture.ts' ],
-  'shared-libs-opportunity-judgment': ['deslop-shared-libs/**', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/index.ts', 'test/helpers/shared-libs-eval-fixture.ts',  'test/skill-e2e-shared-libs-periodic.test.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/llm-judge.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts', 'test/fixtures/shared-libs-readonly-substitution-ci16358.json', 'test/helpers/agent-sdk-runner.ts', 'test/helpers/shared-libs-plan-actor.ts', 'test/helpers/shared-libs-plan-excerpt.ts'],
-  'shared-libs-pr-coverage': ['deslop-shared-libs/**', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/index.ts', 'test/helpers/shared-libs-eval-fixture.ts',  'test/skill-e2e-shared-libs-periodic.test.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/llm-judge.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts', 'test/fixtures/shared-libs-readonly-substitution-ci16358.json', 'test/helpers/agent-sdk-runner.ts', 'test/helpers/shared-libs-plan-actor.ts', 'test/helpers/shared-libs-plan-excerpt.ts'],
+  'shared-libs-opportunity-judgment': ['deslop-shared-libs/**', 'bin/gstack-safe-git', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/index.ts', 'test/helpers/shared-libs-eval-fixture.ts',  'test/skill-e2e-shared-libs-periodic.test.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/llm-judge.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts', 'test/fixtures/shared-libs-readonly-substitution-ci16358.json', 'test/helpers/agent-sdk-runner.ts', 'test/helpers/shared-libs-plan-actor.ts', 'test/helpers/shared-libs-plan-excerpt.ts'],
+  'shared-libs-pr-coverage': ['deslop-shared-libs/**', 'bin/gstack-safe-git', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/index.ts', 'test/helpers/shared-libs-eval-fixture.ts',  'test/skill-e2e-shared-libs-periodic.test.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/llm-judge.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts', 'test/fixtures/shared-libs-readonly-substitution-ci16358.json', 'test/helpers/agent-sdk-runner.ts', 'test/helpers/shared-libs-plan-actor.ts', 'test/helpers/shared-libs-plan-excerpt.ts'],
   'shared-libs-plan-callers': ['test/helpers/shared-libs-plan-actor.ts',  'scripts/resolvers/confidence.ts', 'test/helpers/shared-libs-plan-excerpt.ts',  'scripts/resolvers/preamble/generate-ask-user-format.ts', 'deslop-shared-libs/**', 'scripts/resolvers/shared-libs.ts', 'scripts/resolvers/index.ts', 'test/helpers/shared-libs-eval-fixture.ts',  'plan-eng-review/**', 'test/skill-e2e-shared-libs-periodic.test.ts',   'test/fixtures/plan-scope-recovery-av.json',  'scripts/resolvers/preamble/generate-preamble-bash.ts', 'scripts/resolvers/preamble/generate-completion-status.ts',  'test/helpers/e2e-gate.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/agent-sdk-runner.ts', 'test/helpers/llm-judge.ts', 'lib/claude-bin.ts', 'lib/eval-model.ts'],
   'ship-docsync-missing-marker': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'ship/**', 'document-release/**', 'scripts/resolvers/sections.ts', 'scripts/resolvers/preamble.ts', 'scripts/resolvers/testing.ts', 'scripts/gen-skill-docs.ts', 'bin/gstack-skill-start', 'bin/gstack-session-kind', 'test/helpers/docsync-*.ts', 'test/helpers/qa-functional-*.ts', 'test/helpers/session-runner.ts', 'test/helpers/hermetic-env.ts', 'test/skill-e2e-ship-docsync.test.ts', 'test/helpers/qa-checkpoint-evidence.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/qa-evidence-producer.ts'],
   'ship-docsync-missing-asset': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'ship/**', 'document-release/**', 'scripts/resolvers/sections.ts', 'scripts/resolvers/preamble.ts', 'scripts/resolvers/testing.ts', 'scripts/gen-skill-docs.ts', 'bin/gstack-skill-start', 'bin/gstack-session-kind', 'test/helpers/docsync-*.ts', 'test/helpers/qa-functional-*.ts', 'test/helpers/session-runner.ts', 'test/helpers/hermetic-env.ts', 'test/skill-e2e-ship-docsync.test.ts', 'test/helpers/qa-checkpoint-evidence.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/qa-evidence-producer.ts'],
@@ -69,13 +68,13 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   'qa-functional-cli-fix': ['bin/gstack-qa-evidence', 'bin/gstack-qa-deadline', 'lib/qa-evidence.ts', 'lib/qa-deadline.ts', 'lib/claude-code-windows-job.ts', 'lib/fs-atomic.ts', 'lib/redact-engine.ts', 'lib/redact-patterns.ts', 'test/helpers/qa-evidence-producer.ts', 'test/helpers/qa-functional-evidence.ts',      'qa/**', 'qa-only/**', 'scripts/resolvers/qa.ts', 'scripts/resolvers/utility.ts', 'scripts/resolvers/sections.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/qa-functional-*.ts', 'test/helpers/qa-checkpoint-evidence.ts',  'test/helpers/session-runner.ts', 'test/helpers/hermetic-env.ts', 'test/helpers/skill-fixture.ts', 'test/skill-e2e-qa-functional-fix.test.ts', 'test/helpers/office-hours-attempt.ts'],
   'qa-functional-webhook-fix': ['bin/gstack-qa-evidence', 'bin/gstack-qa-deadline', 'lib/qa-evidence.ts', 'lib/qa-deadline.ts', 'lib/claude-code-windows-job.ts', 'lib/fs-atomic.ts', 'lib/redact-engine.ts', 'lib/redact-patterns.ts', 'test/helpers/qa-evidence-producer.ts', 'test/helpers/qa-functional-evidence.ts',      'qa/**', 'qa-only/**', 'scripts/resolvers/qa.ts', 'scripts/resolvers/utility.ts', 'scripts/resolvers/sections.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/qa-functional-*.ts', 'test/helpers/qa-checkpoint-evidence.ts',  'test/helpers/session-runner.ts', 'test/helpers/hermetic-env.ts', 'test/helpers/skill-fixture.ts', 'test/skill-e2e-qa-functional-fix.test.ts', 'test/helpers/office-hours-attempt.ts'],
   // Browse core (+ test-server dependency)
-  'browse-basic':    ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'browse/src/**', 'browse/test/test-server.ts', 'test/skill-e2e-bws.test.ts'],
-  'browse-snapshot': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'browse/src/**', 'browse/test/test-server.ts', 'test/skill-e2e-bws.test.ts'],
+  'browse-basic':    ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'browse/src/**', 'browse/test/test-server.ts', 'test/skill-e2e-bws.test.ts'],
+  'browse-snapshot': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'browse/src/**', 'browse/test/test-server.ts', 'test/skill-e2e-bws.test.ts'],
 
   // Aside-driven browsing skills — live E2E against the Aside AI browser, the
   // primary browser (test/skill-e2e-aside.test.ts self-skips without a running Aside)
-  'aside-browse-basic':  ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'browse/**', 'scripts/resolvers/browse.ts', 'scripts/resolvers/aside.ts', 'browse/test/test-server.ts', 'browse/test/fixtures/basic.html', 'test/helpers/aside-available.ts', 'test/skill-e2e-aside.test.ts', 'test/helpers/e2e-gate.ts'],
-  'aside-browse-flow':   ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'browse/**', 'scripts/resolvers/browse.ts', 'scripts/resolvers/aside.ts', 'browse/test/test-server.ts', 'browse/test/fixtures/forms.html', 'test/helpers/aside-available.ts', 'test/skill-e2e-aside.test.ts', 'test/helpers/e2e-gate.ts'],
+  'aside-browse-basic':  ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'browse/**', 'scripts/resolvers/browse.ts', 'scripts/resolvers/aside.ts', 'browse/test/test-server.ts', 'browse/test/fixtures/basic.html', 'test/helpers/aside-available.ts', 'test/skill-e2e-aside.test.ts', 'test/helpers/e2e-gate.ts'],
+  'aside-browse-flow':   ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'browse/**', 'scripts/resolvers/browse.ts', 'scripts/resolvers/aside.ts', 'browse/test/test-server.ts', 'browse/test/fixtures/forms.html', 'test/helpers/aside-available.ts', 'test/skill-e2e-aside.test.ts', 'test/helpers/e2e-gate.ts'],
   'aside-qa-quick': [ 'qa/**', 'scripts/resolvers/browse.ts', 'scripts/resolvers/aside.ts', 'browse/test/test-server.ts', 'browse/test/fixtures/basic.html', 'test/helpers/aside-available.ts', 'test/skill-e2e-aside.test.ts', 'test/helpers/e2e-gate.ts'],
   'aside-scrape-json':   [ 'scrape/**', 'scripts/resolvers/aside.ts', 'browse/test/test-server.ts', 'browse/test/fixtures/basic.html', 'test/helpers/aside-available.ts', 'test/skill-e2e-aside.test.ts', 'test/helpers/e2e-gate.ts'],
   'aside-canary-quick':  [ 'canary/**', 'scripts/resolvers/aside.ts', 'browse/test/test-server.ts', 'browse/test/fixtures/basic.html', 'test/helpers/aside-available.ts', 'test/skill-e2e-aside.test.ts', 'test/helpers/e2e-gate.ts'],
@@ -89,7 +88,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   // through the real runner, plus the script wiring that gates + maps it
   // (token-reduction Phase 2: generate-first-run-guidance.ts was deleted; the
   // gate + token→tip map live in bin/gstack-skill-start's emission layer).
-  'first-task-scaffold': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'bin/gstack-skill-start', 'bin/gstack-skill-end', 'bin/gstack-first-task-detect', 'scripts/resolvers/preamble/generate-preamble-bash.ts', 'test/skill-e2e-first-task-scaffold.test.ts', 'test/helpers/session-runner.ts'],
+  'first-task-scaffold': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'bin/gstack-skill-start', 'bin/gstack-skill-end', 'bin/gstack-first-task-detect', 'scripts/resolvers/preamble/generate-preamble-bash.ts', 'test/skill-e2e-first-task-scaffold.test.ts', 'test/helpers/session-runner.ts'],
 
   // SKILL.md setup + preamble (depend on ROOT SKILL.md + gen-skill-docs)
   'skillmd-setup-discovery':  [ 'SKILL.md', 'SKILL.md.tmpl', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-bws.test.ts'],
@@ -97,14 +96,14 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   'skillmd-outside-git':      [ 'SKILL.md', 'SKILL.md.tmpl', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-bws.test.ts'],
 
   'session-awareness':        [ 'SKILL.md', 'SKILL.md.tmpl', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-bws.test.ts'],
-  'operational-learning':     ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'scripts/resolvers/preamble.ts', 'bin/gstack-learnings-log', 'test/skill-e2e-bws.test.ts'],
+  'operational-learning':     ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'scripts/resolvers/preamble.ts', 'bin/gstack-learnings-log', 'test/skill-e2e-bws.test.ts'],
 
   // QA (+ test-server dependency). /qa drives Aside first (the resolver) and
   // the browse binary as fallback (browse/src), so both are deps.
   'qa-quick': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'bin/gstack-qa-deadline', 'lib/qa-deadline.ts', 'lib/claude-code-windows-job.ts',    'qa/**', 'scripts/resolvers/browse.ts', 'scripts/resolvers/aside.ts', 'browse/src/**', 'browse/test/test-server.ts', 'test/skill-e2e-qa-workflow.test.ts', 'test/helpers/aside-available.ts', 'test/fixtures/qa-only-browser-probe.ts', 'test/helpers/bootstrap-retention.ts', 'test/helpers/qa-browser-deadline-evidence.ts', 'test/helpers/qa-checkpoint-evidence.ts', 'test/helpers/qa-evidence-producer.ts', 'test/helpers/qa-only-cleanup.ts'],
-  'qa-b6-static': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'qa/**', 'scripts/resolvers/aside.ts', 'browse/src/**', 'browse/test/test-server.ts', 'test/helpers/llm-judge.ts', 'browse/test/fixtures/qa-eval.html', 'test/fixtures/qa-eval-ground-truth.json', 'test/skill-e2e-qa-bugs.test.ts',  'test/helpers/aside-available.ts'],
-  'qa-b7-spa': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'qa/**', 'scripts/resolvers/aside.ts', 'browse/src/**', 'browse/test/test-server.ts', 'test/helpers/llm-judge.ts', 'browse/test/fixtures/qa-eval-spa.html', 'test/fixtures/qa-eval-spa-ground-truth.json', 'test/skill-e2e-qa-bugs.test.ts',  'test/helpers/aside-available.ts'],
-  'qa-b8-checkout': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'qa/**', 'scripts/resolvers/aside.ts', 'browse/src/**', 'browse/test/test-server.ts', 'test/helpers/llm-judge.ts', 'browse/test/fixtures/qa-eval-checkout.html', 'test/fixtures/qa-eval-checkout-ground-truth.json', 'test/skill-e2e-qa-bugs.test.ts',  'test/helpers/aside-available.ts'],
+  'qa-b6-static': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'qa/**', 'scripts/resolvers/aside.ts', 'browse/src/**', 'browse/test/test-server.ts', 'test/helpers/llm-judge.ts', 'browse/test/fixtures/qa-eval.html', 'test/fixtures/qa-eval-ground-truth.json', 'test/skill-e2e-qa-bugs.test.ts',  'test/helpers/aside-available.ts'],
+  'qa-b7-spa': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'qa/**', 'scripts/resolvers/aside.ts', 'browse/src/**', 'browse/test/test-server.ts', 'test/helpers/llm-judge.ts', 'browse/test/fixtures/qa-eval-spa.html', 'test/fixtures/qa-eval-spa-ground-truth.json', 'test/skill-e2e-qa-bugs.test.ts',  'test/helpers/aside-available.ts'],
+  'qa-b8-checkout': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'qa/**', 'scripts/resolvers/aside.ts', 'browse/src/**', 'browse/test/test-server.ts', 'test/helpers/llm-judge.ts', 'browse/test/fixtures/qa-eval-checkout.html', 'test/fixtures/qa-eval-checkout-ground-truth.json', 'test/skill-e2e-qa-bugs.test.ts',  'test/helpers/aside-available.ts'],
   'qa-only-no-fix': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'test/helpers/qa-only-cleanup.ts',  'test/helpers/qa-checkpoint-evidence.ts',  'test/fixtures/qa-only-observation-public.json', 'test/fixtures/qa-only-charter-public.json', 'test/fixtures/qa-only-browser-probe.ts', 'browse/test/fixtures/qa-only.html',  'test/helpers/qa-browser-deadline-evidence.ts',  'bin/gstack-qa-deadline', 'lib/qa-deadline.ts', 'lib/claude-code-windows-job.ts',      'qa-only/**', 'qa/sections/**', 'qa/templates/**', 'scripts/resolvers/aside.ts', 'browse/src/**', 'browse/test/test-server.ts', 'test/skill-e2e-qa-workflow.test.ts', 'test/helpers/aside-available.ts', 'test/helpers/bootstrap-retention.ts', 'test/helpers/qa-evidence-producer.ts'],
   'qa-fix-loop': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'bin/gstack-qa-deadline', 'lib/qa-deadline.ts', 'lib/claude-code-windows-job.ts',    'qa/**', 'scripts/resolvers/aside.ts', 'browse/src/**', 'browse/test/test-server.ts', 'test/skill-e2e-qa-workflow.test.ts',
      'test/helpers/aside-available.ts', 'test/fixtures/qa-only-browser-probe.ts', 'test/helpers/bootstrap-retention.ts', 'test/helpers/qa-browser-deadline-evidence.ts', 'test/helpers/qa-checkpoint-evidence.ts', 'test/helpers/qa-evidence-producer.ts', 'test/helpers/qa-only-cleanup.ts'],
@@ -117,13 +116,13 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   'review-enum-completeness': [ 'review/**', 'test/fixtures/review-eval-enum*.rb', 'test/skill-e2e-review.test.ts', 
      'test/fixtures/fake-impeccable.ts', 'test/helpers/fake-impeccable.ts'],
   'review-base-branch':       [ 'review/**', 'test/skill-e2e-review-attribution.test.ts'],
-  'review-design-lite':       ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'review/**', 'test/fixtures/review-eval-design-slop.*', 'test/helpers/fake-impeccable.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/impeccable-detect-sample.json', 'lib/design-catalog.ts', 'lib/design-detect-contract.ts', 'bin/gstack-design-detect.ts', 'scripts/resolvers/design-checklist.ts', 'scripts/resolvers/review-army.ts', 'test/skill-e2e-review.test.ts'
+  'review-design-lite':       ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'review/**', 'test/fixtures/review-eval-design-slop.*', 'test/helpers/fake-impeccable.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/impeccable-detect-sample.json', 'lib/design-catalog.ts', 'lib/design-detect-contract.ts', 'bin/gstack-design-detect.ts', 'scripts/resolvers/design-checklist.ts', 'scripts/resolvers/review-army.ts', 'test/skill-e2e-review.test.ts'
     
   ],
 
   // Review Army (specialist dispatch)
   'review-army-migration-safety': [ 'review/**', 'scripts/resolvers/review-army.ts', 'bin/gstack-diff-scope', 'test/skill-e2e-review-army.test.ts', 'test/helpers/office-hours-attempt.ts'],
-  'review-army-perf-n-plus-one':  [ 'review/**', 'scripts/resolvers/review-army.ts', 'bin/gstack-diff-scope', 'test/skill-e2e-review-army.test.ts',   'test/fixtures/review-n-plus-one-dispatch.json', 'test/helpers/office-hours-attempt.ts'],
+  'review-army-perf-n-plus-one':  [ 'review/**', 'scripts/resolvers/review-army.ts', 'bin/gstack-diff-scope', 'test/skill-e2e-review-army.test.ts',   'test/fixtures/review-n-plus-one-dispatch.json', 'test/fixtures/review-army-n-plus-one.rb', 'test/helpers/office-hours-attempt.ts'],
   'review-army-delivery-audit':   [ 'review/**', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts', 'scripts/resolvers/review-army.ts', 'test/skill-e2e-review-army.test.ts', 'test/helpers/office-hours-attempt.ts'],
   'review-army-quality-score':    [ 'review/**', 'scripts/resolvers/review-army.ts', 'test/skill-e2e-review-army.test.ts',  'test/helpers/office-hours-attempt.ts'],
   'review-army-json-findings':    [ 'review/**', 'scripts/resolvers/review-army.ts', 'test/skill-e2e-review-army.test.ts', 'test/helpers/office-hours-attempt.ts'],
@@ -185,9 +184,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   // include question-tuning.ts and generate-ask-user-format.ts because the
   // AUTO_DECIDE preamble injection lives there and changes can flip the
   // regression test outcome between 'asked' and 'auto_decided'.
-  'plan-ceo-review-plan-mode':    ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-    
-    'test/helpers/plan-count-fixture.ts',
+  'plan-ceo-review-plan-mode':    ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'test/helpers/plan-count-fixture.ts',
     
     
     'test/fixtures/auto-decide-recommendation-361c.json',
@@ -203,8 +200,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
     
     "test/fixtures/eng-option-b-scope-al.json",
      'test/fixtures/pty-companion-cli.ts', 'lib/fs-atomic.ts',    'test/helpers/plan-skill-questions.ts', 'test/fixtures/eng-auq-validation-error.json', 'test/fixtures/bash-directory-permission.json', 'test/fixtures/design-tasks-bash-permission.json',  'test/fixtures/read-permission.json',  'test/fixtures/ceo-split-e5-numbered-description-491.json',  'test/helpers/plan-skill-question-events.ts',  'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/skill-census.ts',  'scripts/resolvers/tasks-section.ts', 'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/eng-cache-writer-decision.ts', 'test/helpers/owned-claude-transcript.ts', 'test/helpers/plan-count-artifacts.ts', 'test/helpers/plan-count-file-permission.ts', 'test/helpers/plan-count-pending-question.ts', 'test/helpers/plan-count-transcript.ts', 'test/helpers/plan-floor-review.ts', 'test/helpers/plan-floor-target.ts'],
-  'plan-eng-review-plan-mode':    ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-    'lib/claude-public-transcript.ts',
+  'plan-eng-review-plan-mode':    ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'lib/claude-public-transcript.ts',
     
     'test/fixtures/auto-decide-recommendation-361c.json',
     
@@ -226,7 +222,8 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
 
      "scripts/resolvers/preamble/generate-preamble-bash.ts",
      'test/fixtures/pty-companion-cli.ts', 'test/helpers/plan-seed-submission.ts',  'test/fixtures/plan-seed-cli.ts', 'test/helpers/owned-claude-transcript.ts', 'lib/fs-atomic.ts',    'test/helpers/plan-skill-questions.ts', 'test/fixtures/eng-auq-validation-error.json', 'test/fixtures/bash-directory-permission.json', 'test/fixtures/design-tasks-bash-permission.json',  'test/fixtures/read-permission.json',  'test/fixtures/ceo-split-e5-numbered-description-491.json',  'test/helpers/plan-skill-question-events.ts',  'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/skill-census.ts',  'scripts/resolvers/testing.ts', 'test/helpers/plan-mode-evidence.ts',  'lib/redact-engine.ts', 'lib/redact-patterns.ts',  'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/eng-cache-writer-decision.ts', 'test/helpers/plan-count-artifacts.ts', 'test/helpers/plan-count-file-permission.ts', 'test/helpers/plan-count-fixture.ts', 'test/helpers/plan-count-pending-question.ts', 'test/helpers/plan-floor-review.ts', 'test/helpers/plan-floor-target.ts'],
-  'plan-design-review-plan-mode': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  
+  // PTY plan-mode smoke (whole file); the SDK plan-edit case below owns plan-design-review-plan-mode.
+  'plan-design-review-plan-mode-smoke': [
     'lib/claude-public-transcript.ts',
     
     'test/fixtures/auto-decide-recommendation-361c.json',
@@ -242,7 +239,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
     
     "test/fixtures/plan-scope-recovery-av.json",
     "test/fixtures/design-scope-checkpoint-at.json",
-     'test/fixtures/auto-decide-saved-ai.json', 'test/fixtures/auto-decide-retry-ai.json','bin/gstack-skill-start', 'bin/gstack-skill-end', 'plan-design-review/**', 'scripts/resolvers/preamble/generate-completion-status.ts', 'scripts/resolvers/question-tuning.ts', 'scripts/resolvers/preamble/generate-ask-user-format.ts', 'scripts/resolvers/preamble.ts', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts', 'test/helpers/claude-pty-runner.ts', 'test/helpers/pty/**',  'test/fixtures/design-ui-boxed-question.json', 'test/helpers/hermetic-skill-runtime.ts',  'test/helpers/pty-trust-dialog.ts',  'test/skill-e2e-plan-design-plan-mode.test.ts', 'test/skill-e2e-design.test.ts',  'test/fixtures/eng-d2-truncated-border-0bcd.json',   'test/fixtures/eng-d1-clipped-elision-1579.json', 'test/fixtures/eng-d2-planning-prelude-4d.json', 'test/fixtures/ceo-approach-z-call.json', 'test/fixtures/ceo-approach-z-screen.txt', 'test/helpers/plan-scope-selection.ts',  'test/fixtures/design-plan-scope-ag.json',  'test/fixtures/design-scope-selection-aj.json', 'test/helpers/native-auto-decide.ts',  'test/fixtures/auto-decide-current-declaration-6aef.json',  'test/fixtures/auto-decide-explanatory-mode-043a.json', 'test/fixtures/auto-decide-explanatory-mode-749df.json',  'test/fixtures/auto-decide-structured-77.json', 'test/helpers/auto-decision-state.ts',  'test/fixtures/auto-decide-state-cab3.json', 'bin/gstack-question-log', 'bin/gstack-question-preference',   'test/helpers/fake-plan-seed.ts', 'test/fixtures/native-auto-decide-ag.json',  'test/fixtures/eng-seeded-completion-ai.json', 'test/helpers/plan-count-pending-exit.ts',  'test/helpers/pty-screen.ts',   'test/fixtures/pty-screen/**',
+     'test/fixtures/auto-decide-saved-ai.json', 'test/fixtures/auto-decide-retry-ai.json','bin/gstack-skill-start', 'bin/gstack-skill-end', 'plan-design-review/**', 'scripts/resolvers/preamble/generate-completion-status.ts', 'scripts/resolvers/question-tuning.ts', 'scripts/resolvers/preamble/generate-ask-user-format.ts', 'scripts/resolvers/preamble.ts', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts', 'test/helpers/claude-pty-runner.ts', 'test/helpers/pty/**',  'test/fixtures/design-ui-boxed-question.json', 'test/helpers/hermetic-skill-runtime.ts',  'test/helpers/pty-trust-dialog.ts',  'test/skill-e2e-plan-design-plan-mode.test.ts', 'test/fixtures/eng-d2-truncated-border-0bcd.json',   'test/fixtures/eng-d1-clipped-elision-1579.json', 'test/fixtures/eng-d2-planning-prelude-4d.json', 'test/fixtures/ceo-approach-z-call.json', 'test/fixtures/ceo-approach-z-screen.txt', 'test/helpers/plan-scope-selection.ts',  'test/fixtures/design-plan-scope-ag.json',  'test/fixtures/design-scope-selection-aj.json', 'test/helpers/native-auto-decide.ts',  'test/fixtures/auto-decide-current-declaration-6aef.json',  'test/fixtures/auto-decide-explanatory-mode-043a.json', 'test/fixtures/auto-decide-explanatory-mode-749df.json',  'test/fixtures/auto-decide-structured-77.json', 'test/helpers/auto-decision-state.ts',  'test/fixtures/auto-decide-state-cab3.json', 'bin/gstack-question-log', 'bin/gstack-question-preference',   'test/helpers/fake-plan-seed.ts', 'test/fixtures/native-auto-decide-ag.json',  'test/fixtures/eng-seeded-completion-ai.json', 'test/helpers/plan-count-pending-exit.ts',  'test/helpers/pty-screen.ts',   'test/fixtures/pty-screen/**',
     
      'test/fixtures/design-scope-announcement-ao.json',
     'test/fixtures/design-scope-declaration-ak.json',
@@ -251,10 +248,13 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
     
 
      "scripts/resolvers/preamble/generate-preamble-bash.ts",
-     'test/fixtures/pty-companion-cli.ts', 'test/helpers/plan-seed-submission.ts',  'test/fixtures/plan-seed-cli.ts', 'test/helpers/owned-claude-transcript.ts', 'lib/fs-atomic.ts',    'test/helpers/plan-skill-questions.ts', 'test/fixtures/eng-auq-validation-error.json', 'test/fixtures/bash-directory-permission.json', 'test/fixtures/design-tasks-bash-permission.json',  'test/fixtures/read-permission.json',  'test/fixtures/ceo-split-e5-numbered-description-491.json',  'test/helpers/plan-skill-question-events.ts',  'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/skill-census.ts',  'test/helpers/plan-mode-evidence.ts',  'lib/redact-engine.ts', 'lib/redact-patterns.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/helpers/aside-available.ts', 'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/eng-cache-writer-decision.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/llm-judge.ts', 'test/helpers/plan-count-artifacts.ts', 'test/helpers/plan-count-file-permission.ts', 'test/helpers/plan-count-fixture.ts', 'test/helpers/plan-count-pending-question.ts', 'test/helpers/plan-floor-review.ts', 'test/helpers/plan-floor-target.ts'],
-  'plan-devex-review-plan-mode':  ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-    
-    'test/fixtures/auto-decide-recommendation-361c.json',
+     'test/fixtures/pty-companion-cli.ts', 'test/helpers/plan-seed-submission.ts',  'test/fixtures/plan-seed-cli.ts', 'test/helpers/owned-claude-transcript.ts', 'lib/fs-atomic.ts',    'test/helpers/plan-skill-questions.ts', 'test/fixtures/eng-auq-validation-error.json', 'test/fixtures/bash-directory-permission.json', 'test/fixtures/design-tasks-bash-permission.json',  'test/fixtures/read-permission.json',  'test/fixtures/ceo-split-e5-numbered-description-491.json',  'test/helpers/plan-skill-question-events.ts',  'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/skill-census.ts',  'test/helpers/plan-mode-evidence.ts',  'lib/redact-engine.ts', 'lib/redact-patterns.ts', 'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/eng-cache-writer-decision.ts', 'test/helpers/plan-count-artifacts.ts', 'test/helpers/plan-count-file-permission.ts', 'test/helpers/plan-count-fixture.ts', 'test/helpers/plan-count-pending-question.ts', 'test/helpers/plan-floor-review.ts', 'test/helpers/plan-floor-target.ts'],
+  // SDK plan-edit case in test/skill-e2e-design.test.ts (claude -p edits plan.md).
+  'plan-design-review-plan-mode': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'plan-design-review/**', 'scripts/gen-skill-docs.ts', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts', 'scripts/resolvers/design.ts',
+    'scripts/resolvers/preamble.ts', 'scripts/resolvers/preamble/generate-preamble-bash.ts', 'scripts/resolvers/preamble/generate-ask-user-format.ts', 'scripts/resolvers/preamble/generate-completion-status.ts',
+    'lib/eval-model.ts', 'test/skill-e2e-design.test.ts',
+    'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/fixtures/review-eval-design-slop.css', 'test/helpers/aside-available.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts', 'test/helpers/pty/**'],
+  'plan-devex-review-plan-mode':  ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'test/fixtures/auto-decide-recommendation-361c.json',
     
     'test/fixtures/auto-decide-target-361c.json',
 
@@ -270,12 +270,10 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   // Covers ceo (preamble misfire) + eng/design (scope-gate bypass must not
   // fire outside plan mode) + the named-target exception case. 4 PTY runs;
   // in CI these run CONCURRENT with the rest of the pty-plan-smoke suite
-  // (--max-concurrency + --retry 1), so worst-case cost is ~2x a single
-  // pass of each, sharing the API budget with sibling tests — not the
+  // (--max-concurrency, no retries), so worst-case cost is one pass of
+  // each, sharing the API budget with sibling tests — not the
   // sequential ~+10min a local read suggests.
-  'plan-mode-no-op':              ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-    
-    'test/fixtures/auto-decide-recommendation-361c.json',
+  'plan-mode-no-op':              ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'test/fixtures/auto-decide-recommendation-361c.json',
     
     'test/fixtures/auto-decide-target-361c.json',
 
@@ -304,22 +302,19 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   // INSIDE the existing 4 plan-X-review-plan-mode test files (covered
   // transitively by the entries above). Two new standalone files exist for
   // skills with no prior plan-mode test:
-  'office-hours-auto-mode':       ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-    
-    'test/fixtures/auto-decide-recommendation-361c.json',
+  'office-hours-auto-mode':       ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'test/fixtures/auto-decide-recommendation-361c.json',
     
     'test/fixtures/auto-decide-target-361c.json',
   'test/fixtures/native-auto-decide-ag.json', 'test/helpers/native-auto-decide.ts',  'test/fixtures/auto-decide-current-declaration-6aef.json',  'test/fixtures/auto-decide-explanatory-mode-043a.json', 'test/fixtures/auto-decide-explanatory-mode-749df.json', 'bin/gstack-skill-start', 'bin/gstack-skill-end', 'office-hours/**', 'scripts/resolvers/preamble/generate-completion-status.ts', 'scripts/resolvers/question-tuning.ts', 'scripts/resolvers/preamble/generate-ask-user-format.ts', 'scripts/resolvers/preamble.ts', 'test/helpers/claude-pty-runner.ts', 'test/helpers/pty/**',  'test/fixtures/design-ui-boxed-question.json', 'test/helpers/hermetic-skill-runtime.ts',  'test/helpers/pty-trust-dialog.ts',  'test/skill-e2e-office-hours-auto-mode.test.ts',  'test/fixtures/eng-d2-truncated-border-0bcd.json',   'test/fixtures/eng-d1-clipped-elision-1579.json', 'test/fixtures/eng-d2-planning-prelude-4d.json', 'test/fixtures/ceo-approach-z-call.json', 'test/fixtures/ceo-approach-z-screen.txt',
      'test/fixtures/pty-companion-cli.ts', 'lib/fs-atomic.ts',    'test/helpers/plan-skill-questions.ts', 'test/fixtures/eng-auq-validation-error.json', 'test/fixtures/bash-directory-permission.json', 'test/fixtures/design-tasks-bash-permission.json',  'test/fixtures/read-permission.json',  'test/fixtures/ceo-split-e5-numbered-description-491.json',  'test/helpers/plan-skill-question-events.ts',  'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/skill-census.ts',  'test/helpers/auto-decision-state.ts', 'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/eng-cache-writer-decision.ts', 'test/helpers/owned-claude-transcript.ts', 'test/helpers/plan-count-artifacts.ts', 'test/helpers/plan-count-file-permission.ts', 'test/helpers/plan-count-fixture.ts', 'test/helpers/plan-count-pending-exit.ts', 'test/helpers/plan-count-pending-question.ts', 'test/helpers/plan-count-transcript.ts', 'test/helpers/plan-floor-review.ts', 'test/helpers/plan-floor-target.ts', 'test/helpers/plan-scope-selection.ts', 'test/helpers/plan-seed-submission.ts', 'test/helpers/pty-screen.ts'],
-  'office-hours-phase4-fork':     ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'bin/gstack-skill-start', 'bin/gstack-skill-end', 'office-hours/**', 'scripts/resolvers/preamble/generate-ask-user-format.ts', 'scripts/resolvers/preamble/generate-completion-status.ts', 'scripts/resolvers/preamble.ts', 'scripts/resolvers/question-tuning.ts', 'test/helpers/llm-judge.ts', 'test/skill-e2e-office-hours-phase4.test.ts' ],
+  'office-hours-phase4-fork':     ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'bin/gstack-skill-start', 'bin/gstack-skill-end', 'office-hours/**', 'scripts/resolvers/preamble/generate-ask-user-format.ts', 'scripts/resolvers/preamble/generate-completion-status.ts', 'scripts/resolvers/preamble.ts', 'scripts/resolvers/question-tuning.ts', 'test/helpers/llm-judge.ts', 'test/skill-e2e-office-hours-phase4.test.ts' ],
   'llm-judge-recommendation':     ['codex/**', 'test/helpers/llm-judge.ts', 'test/llm-judge-recommendation.test.ts', 'scripts/resolvers/preamble/generate-ask-user-format.ts', 'codex/SKILL.md.tmpl', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts'],
   // v1.21+ AUTO_DECIDE preserve eval (periodic). Verifies the Tool resolution
   // fix doesn't trip the legitimate /plan-tune opt-in path: when the user has
   // written a never-ask preference, AUQ should still auto-decide rather than
   // surfacing the question. Touches the question-tuning + preference
   // infrastructure plus the resolvers that own the AUTO_DECIDE preamble.
-  'auto-decide-preserved':        ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'hosts/claude/hooks/hook-log.ts', 
-    'lib/claude-public-transcript.ts',
+  'auto-decide-preserved':        ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'lib/claude-public-transcript.ts',
     
     'test/fixtures/auto-decide-recommendation-361c.json',
     
@@ -331,7 +326,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
      'test/fixtures/auto-decide-saved-ai.json', 'test/fixtures/auto-decide-retry-ai.json','bin/gstack-skill-start', 'bin/gstack-skill-end', 'bin/gstack-session-kind', 'scripts/resolvers/question-tuning.ts', 'scripts/resolvers/preamble/generate-ask-user-format.ts', 'scripts/resolvers/preamble/generate-preamble-bash.ts', 'scripts/resolvers/preamble/generate-completion-status.ts', 'plan-ceo-review/**', 'bin/gstack-question-preference', 'bin/gstack-config', 'bin/gstack-slug', 'hosts/claude/hooks/question-preference-hook.ts', 'hosts/claude/hooks/spawned-directive.ts', 'lib/is-conductor.ts', 'test/helpers/claude-pty-runner.ts', 'test/helpers/pty/**',  'test/fixtures/design-ui-boxed-question.json', 'test/helpers/hermetic-skill-runtime.ts',  'test/helpers/pty-trust-dialog.ts',  'test/skill-e2e-auto-decide-preserved.test.ts',  'test/fixtures/eng-d2-truncated-border-0bcd.json',   'test/fixtures/eng-d1-clipped-elision-1579.json', 'test/fixtures/eng-d2-planning-prelude-4d.json', 'test/fixtures/ceo-approach-z-call.json', 'test/fixtures/ceo-approach-z-screen.txt', 'test/helpers/native-auto-decide.ts',  'test/fixtures/auto-decide-current-declaration-6aef.json',  'test/fixtures/auto-decide-explanatory-mode-043a.json', 'test/fixtures/auto-decide-explanatory-mode-749df.json',  'test/fixtures/auto-decide-structured-77.json', 'test/helpers/auto-decision-state.ts',  'test/fixtures/auto-decide-state-cab3.json', 'bin/gstack-question-log',   'test/helpers/fake-plan-seed.ts', 'test/helpers/plan-seed-submission.ts',  'test/fixtures/plan-seed-cli.ts', 'test/fixtures/native-auto-decide-ag.json',  'test/fixtures/eng-seeded-completion-ai.json', 'test/helpers/plan-count-pending-exit.ts',  'test/helpers/pty-screen.ts',   'test/fixtures/pty-screen/**',
     
     'test/helpers/plan-count-fixture.ts', 
-     'test/fixtures/pty-companion-cli.ts', 'lib/fs-atomic.ts',  'test/fixtures/auto-decide-mode-selector-749df.json', 'lib/redact-engine.ts', 'lib/redact-patterns.ts', 'test/helpers/ceo-finding-fixture.ts',  'test/helpers/owned-claude-transcript.ts', 'test/helpers/plan-skill-questions.ts', 'test/fixtures/eng-auq-validation-error.json', 'test/fixtures/bash-directory-permission.json', 'test/fixtures/design-tasks-bash-permission.json',  'test/fixtures/read-permission.json',  'test/fixtures/ceo-split-e5-numbered-description-491.json',  'test/helpers/plan-skill-question-events.ts',  'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/skill-census.ts',     'scripts/resolvers/tasks-section.ts', 'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/eng-cache-writer-decision.ts', 'test/helpers/plan-count-artifacts.ts', 'test/helpers/plan-count-file-permission.ts', 'test/helpers/plan-count-pending-question.ts', 'test/helpers/plan-floor-review.ts', 'test/helpers/plan-floor-target.ts', 'test/helpers/plan-scope-selection.ts'],
+     'test/fixtures/pty-companion-cli.ts', 'lib/fs-atomic.ts',  'test/fixtures/auto-decide-mode-selector-749df.json', 'lib/redact-engine.ts', 'lib/redact-patterns.ts', 'test/helpers/ceo-finding-fixture.ts',  'test/helpers/owned-claude-transcript.ts', 'test/helpers/plan-skill-questions.ts', 'test/fixtures/eng-auq-validation-error.json', 'test/fixtures/bash-directory-permission.json', 'test/fixtures/design-tasks-bash-permission.json',  'test/fixtures/read-permission.json',  'test/fixtures/ceo-split-e5-numbered-description-491.json',  'test/helpers/plan-skill-question-events.ts',  'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/skill-census.ts',     'scripts/resolvers/tasks-section.ts', 'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/eng-cache-writer-decision.ts', 'test/helpers/plan-count-artifacts.ts', 'test/helpers/plan-count-file-permission.ts', 'test/helpers/plan-count-pending-question.ts', 'test/helpers/plan-floor-review.ts', 'test/helpers/plan-floor-target.ts', 'test/helpers/plan-scope-selection.ts', 'hosts/claude/hooks/hook-log.ts'],
 
   // Conductor → prose decision brief (Conductor signal makes prose the default;
   // the PreToolUse hook denies the flaky tool). Touches the resolver that owns
@@ -362,7 +357,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
      "test/fixtures/ceo-hold-commitment-ar.json",
      'test/fixtures/pty-companion-cli.ts', 'lib/fs-atomic.ts',  'test/helpers/ceo-finding-fixture.ts',   'test/helpers/plan-skill-questions.ts', 'test/fixtures/eng-auq-validation-error.json', 'test/fixtures/bash-directory-permission.json', 'test/fixtures/design-tasks-bash-permission.json',  'test/fixtures/read-permission.json',  'test/fixtures/ceo-split-e5-numbered-description-491.json',  'test/helpers/plan-skill-question-events.ts',  'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/skill-census.ts',  'test/helpers/owned-claude-transcript.ts',    'scripts/resolvers/tasks-section.ts',
     'test/fixtures/ceo-expansion-pacing-77.json', 'test/helpers/auto-decision-state.ts', 'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/eng-cache-writer-decision.ts', 'test/helpers/native-auto-decide.ts', 'test/helpers/plan-count-artifacts.ts', 'test/helpers/plan-count-file-permission.ts', 'test/helpers/plan-count-pending-exit.ts', 'test/helpers/plan-floor-review.ts', 'test/helpers/plan-floor-target.ts', 'test/helpers/plan-scope-selection.ts', 'test/helpers/plan-seed-submission.ts'],
-  'plan-design-with-ui-scope':   ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'test/helpers/pty-screen.ts',
+  'plan-design-with-ui-scope':   ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'test/helpers/pty-screen.ts',
     'lib/claude-public-transcript.ts',
      'test/fixtures/autoplan-public-narration-ad.json',
     'test/helpers/plan-count-fixture.ts', 
@@ -401,8 +396,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   // devex, office-hours + future PR2 carves). One file iterating CARVE_GUARDS;
   // the selector sets GSTACK_CARVE_SKILL=<name> to scope cost to the changed
   // skill (D-CODEX A). Touching the registry/helper or sections.ts runs all.
-  'carve-section-loading':       ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-    'bin/gstack-review-log', 'bin/gstack-review-read', 'lib/review-evidence.ts',
+  'carve-section-loading':       ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'bin/gstack-review-log', 'bin/gstack-review-read', 'lib/review-evidence.ts',
     'bin/gstack-slug', 'bin/gstack-wtree', 'bin/gstack-config', 'bin/gstack-brain-enqueue',
      'test/fixtures/autoplan-amend-input-77.json',
      'test/fixtures/autoplan-phase-handoff-6714.json','scripts/resolvers/learnings.ts', 
@@ -424,7 +418,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   // review-phase AskUserQuestion). Uses runPlanSkillFloorCheck — minimal
   // "did agent fire ANY AUQ?" observer that exits early on first non-permission
   // numbered-option render. ~1-3 min typical wall time per test, ~$2-6 total.
-  'plan-eng-finding-floor':      ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'test/helpers/pty-screen.ts',
+  'plan-eng-finding-floor':      ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'test/helpers/pty-screen.ts',
     'lib/claude-public-transcript.ts',  'test/fixtures/plan-create-prepublication-491.json',  'test/fixtures/plan-create-combined-permission-70b.json', 'test/fixtures/plan-floor-quote-70b.json',
     
     'test/fixtures/plan-create-permission-361c.json',
@@ -440,7 +434,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
 
      "scripts/resolvers/preamble/generate-preamble-bash.ts",
      'test/fixtures/pty-companion-cli.ts', 'lib/fs-atomic.ts',    'test/helpers/plan-skill-questions.ts', 'test/fixtures/eng-auq-validation-error.json', 'test/fixtures/bash-directory-permission.json', 'test/fixtures/design-tasks-bash-permission.json',  'test/fixtures/read-permission.json',  'test/fixtures/ceo-split-e5-numbered-description-491.json',  'test/helpers/plan-skill-question-events.ts',  'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/skill-census.ts',  'scripts/resolvers/testing.ts',  'test/helpers/auto-decision-state.ts', 'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/eng-cache-writer-decision.ts', 'test/helpers/native-auto-decide.ts', 'test/helpers/owned-claude-transcript.ts', 'test/helpers/plan-count-pending-exit.ts', 'test/helpers/plan-count-pending-question.ts', 'test/helpers/plan-count-transcript.ts', 'test/helpers/plan-scope-selection.ts', 'test/helpers/plan-seed-submission.ts'],
-  'plan-ceo-finding-floor':      ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'test/helpers/pty-screen.ts',
+  'plan-ceo-finding-floor':      ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'test/helpers/pty-screen.ts',
     'lib/claude-public-transcript.ts',  'test/fixtures/plan-create-prepublication-491.json',  'test/fixtures/plan-create-combined-permission-70b.json', 'test/fixtures/plan-floor-quote-70b.json',
     
     'test/fixtures/plan-create-permission-361c.json',
@@ -452,7 +446,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
      
        
      'test/fixtures/pty-companion-cli.ts', 'lib/fs-atomic.ts',    'test/helpers/plan-skill-questions.ts', 'test/fixtures/eng-auq-validation-error.json', 'test/fixtures/bash-directory-permission.json', 'test/fixtures/design-tasks-bash-permission.json',  'test/fixtures/read-permission.json',  'test/fixtures/ceo-split-e5-numbered-description-491.json',  'test/helpers/plan-skill-question-events.ts',  'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/skill-census.ts',  'scripts/resolvers/tasks-section.ts', 'test/helpers/auto-decision-state.ts', 'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/eng-cache-writer-decision.ts', 'test/helpers/native-auto-decide.ts', 'test/helpers/owned-claude-transcript.ts', 'test/helpers/plan-count-pending-exit.ts', 'test/helpers/plan-count-pending-question.ts', 'test/helpers/plan-count-transcript.ts', 'test/helpers/plan-scope-selection.ts', 'test/helpers/plan-seed-submission.ts'],
-  'plan-design-finding-floor':   ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'test/helpers/pty-screen.ts',
+  'plan-design-finding-floor':   ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'test/helpers/pty-screen.ts',
     
     'lib/claude-public-transcript.ts',  'test/fixtures/plan-create-prepublication-491.json',  'test/fixtures/plan-create-combined-permission-70b.json', 'test/fixtures/plan-floor-quote-70b.json',
     
@@ -469,7 +463,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
 
      "scripts/resolvers/preamble/generate-preamble-bash.ts",
      'test/fixtures/pty-companion-cli.ts', 'lib/fs-atomic.ts',    'test/helpers/plan-skill-questions.ts', 'test/fixtures/eng-auq-validation-error.json', 'test/fixtures/bash-directory-permission.json', 'test/fixtures/design-tasks-bash-permission.json',  'test/fixtures/read-permission.json',  'test/fixtures/ceo-split-e5-numbered-description-491.json',  'test/helpers/plan-skill-question-events.ts',  'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/skill-census.ts',  'test/helpers/ceo-finding-fixture.ts',   'test/helpers/auto-decision-state.ts', 'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/eng-cache-writer-decision.ts', 'test/helpers/native-auto-decide.ts', 'test/helpers/owned-claude-transcript.ts', 'test/helpers/plan-count-pending-exit.ts', 'test/helpers/plan-count-pending-question.ts', 'test/helpers/plan-count-transcript.ts', 'test/helpers/plan-scope-selection.ts', 'test/helpers/plan-seed-submission.ts'],
-  'plan-devex-finding-floor':    ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'test/helpers/pty-screen.ts',
+  'plan-devex-finding-floor':    ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'test/helpers/pty-screen.ts',
      'test/fixtures/plan-floor-dx-custom-491.json', 'test/fixtures/plan-floor-dx-editor-hint.json',
     
     'lib/claude-public-transcript.ts',  'test/fixtures/plan-create-prepublication-491.json',  'test/fixtures/plan-create-combined-permission-70b.json', 'test/fixtures/plan-floor-quote-70b.json', 'test/fixtures/plan-floor-product-type-70b.json',
@@ -487,8 +481,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   // a model fires one AUQ then batches the rest into a "## Decisions to
   // confirm" plan write. runPlanSkillFloorCheck cannot detect that shape
   // (it exits on first AUQ); runPlanSkillCounting can.
-  'plan-eng-multi-finding-batching': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-    'lib/claude-public-transcript.ts',  'test/fixtures/plan-create-prepublication-491.json',  'test/fixtures/plan-create-combined-permission-70b.json',
+  'plan-eng-multi-finding-batching': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'lib/claude-public-transcript.ts',  'test/fixtures/plan-create-prepublication-491.json',  'test/fixtures/plan-create-combined-permission-70b.json',
     
     'test/fixtures/plan-create-permission-361c.json',
     
@@ -526,8 +519,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
 
      "scripts/resolvers/preamble/generate-preamble-bash.ts",
      'test/fixtures/pty-companion-cli.ts',   'lib/fs-atomic.ts', 'test/helpers/owned-claude-transcript.ts',    'test/fixtures/webfetch-permission.json',  'test/helpers/plan-skill-questions.ts', 'test/fixtures/eng-auq-validation-error.json', 'test/fixtures/bash-directory-permission.json', 'test/fixtures/design-tasks-bash-permission.json',  'test/fixtures/read-permission.json',  'test/fixtures/ceo-split-e5-numbered-description-491.json',  'test/helpers/plan-skill-question-events.ts',  'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/skill-census.ts',  'test/helpers/ceo-finding-fixture.ts',     'test/helpers/plan-review-decisions.ts',  'test/helpers/plan-review-cases.ts',  'test/helpers/llm-judge.ts', 'lib/eval-model.ts', 'test/skill-e2e-plan-decision-classification.test.ts', 'test/fixtures/plan-decision-classification.ts',  'scripts/resolvers/testing.ts', 'test/fixtures/eng-file-permission-repaint.json', 'test/helpers/auto-decision-state.ts', 'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/native-auto-decide.ts', 'test/helpers/plan-count-pending-question.ts', 'test/helpers/plan-floor-review.ts', 'test/helpers/plan-floor-target.ts', 'test/helpers/plan-scope-selection.ts', 'test/helpers/plan-seed-submission.ts'],
-  'plan-ceo-split-overflow': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-    'lib/claude-public-transcript.ts',  'test/fixtures/plan-create-prepublication-491.json',  'test/fixtures/plan-create-combined-permission-70b.json',
+  'plan-ceo-split-overflow': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'lib/claude-public-transcript.ts',  'test/fixtures/plan-create-prepublication-491.json',  'test/fixtures/plan-create-combined-permission-70b.json',
     
     'test/fixtures/plan-create-permission-361c.json',
     
@@ -551,16 +543,15 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   // Agent SDK. Gate-tier (deterministic stub server, fixed inputs); fires
   // when the skill template, the verify helper, the artifacts-init helper,
   // or the detect script changes.
-  'setup-gbrain-remote':          ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-     'test/helpers/setup-gbrain-sandbox.ts', 'test/helpers/office-hours-attempt.ts',  'test/helpers/eval-store.ts', 'test/helpers/e2e-helpers.ts', 'lib/redact-engine.ts', 'lib/redact-patterns.ts', 'lib/eval-model.ts','setup-gbrain/sections/brain-init.md.tmpl', 'setup-gbrain/sections/claude-md-persist.md.tmpl', 'setup-gbrain/sections/manifest.json', 'test/helpers/setup-gbrain-fixture.ts', 'setup-gbrain/SKILL.md.tmpl', 'bin/gstack-gbrain-mcp-verify', 'bin/gstack-artifacts-init', 'bin/gstack-gbrain-detect', 'test/helpers/agent-sdk-runner.ts', 'test/skill-e2e-setup-gbrain-remote.test.ts',
+  'setup-gbrain-remote':          ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'test/helpers/setup-gbrain-sandbox.ts', 'test/helpers/office-hours-attempt.ts',  'test/helpers/eval-store.ts', 'test/helpers/e2e-helpers.ts', 'lib/redact-engine.ts', 'lib/redact-patterns.ts', 'lib/eval-model.ts','setup-gbrain/sections/brain-init.md.tmpl', 'setup-gbrain/sections/claude-md-persist.md.tmpl', 'setup-gbrain/sections/manifest.json', 'test/helpers/setup-gbrain-fixture.ts', 'setup-gbrain/SKILL.md.tmpl', 'bin/gstack-gbrain-mcp-verify', 'bin/gstack-artifacts-init', 'bin/gstack-gbrain-detect', 'test/helpers/agent-sdk-runner.ts', 'test/skill-e2e-setup-gbrain-remote.test.ts',
      'test/helpers/e2e-gate.ts'],
-  'setup-gbrain-bad-token':       ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'setup-gbrain/sections/brain-init.md.tmpl', 'setup-gbrain/sections/manifest.json', 'test/helpers/setup-gbrain-fixture.ts', 'setup-gbrain/SKILL.md.tmpl', 'bin/gstack-gbrain-mcp-verify', 'test/helpers/agent-sdk-runner.ts', 'test/skill-e2e-setup-gbrain-bad-token.test.ts',
+  'setup-gbrain-bad-token':       ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'setup-gbrain/sections/brain-init.md.tmpl', 'setup-gbrain/sections/manifest.json', 'test/helpers/setup-gbrain-fixture.ts', 'setup-gbrain/SKILL.md.tmpl', 'bin/gstack-gbrain-mcp-verify', 'test/helpers/agent-sdk-runner.ts', 'test/skill-e2e-setup-gbrain-bad-token.test.ts',
      'test/helpers/setup-gbrain-sandbox.ts', 'lib/redact-engine.ts', 'lib/redact-patterns.ts', 'test/helpers/setup-gbrain-fixture-command.ts',  'bin/gstack-gbrain-detect', 'lib/gbrain-local-status.ts', 'lib/gbrain-exec.ts', 'bin/gstack-gbrain-lib.sh', 'bin/gstack-egress-lib.sh', 'bin/gstack-egress-receipt', 'test/helpers/office-hours-attempt.ts',  'test/helpers/e2e-gate.ts'],
   // v1.34.0.0 split-engine Path 4 + Step 4.5 Yes (local PGLite for code).
   // Periodic-tier per codex #12 (AgentSDK harness is non-deterministic).
   // Fires when the setup-gbrain template, install/verify/init helpers, or
   // the agent-sdk-runner harness changes.
-  'setup-gbrain-path4-local-pglite': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'setup-gbrain/sections/brain-init.md.tmpl', 'setup-gbrain/sections/claude-md-persist.md.tmpl', 'setup-gbrain/sections/manifest.json', 'test/helpers/setup-gbrain-fixture.ts', 'setup-gbrain/SKILL.md.tmpl', 'bin/gstack-gbrain-mcp-verify', 'bin/gstack-gbrain-install', 'bin/gstack-gbrain-detect', 'lib/gbrain-local-status.ts', 'test/helpers/agent-sdk-runner.ts', 'test/skill-e2e-setup-gbrain-path4-local-pglite.test.ts', 
+  'setup-gbrain-path4-local-pglite': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'setup-gbrain/sections/brain-init.md.tmpl', 'setup-gbrain/sections/claude-md-persist.md.tmpl', 'setup-gbrain/sections/manifest.json', 'test/helpers/setup-gbrain-fixture.ts', 'setup-gbrain/SKILL.md.tmpl', 'bin/gstack-gbrain-mcp-verify', 'bin/gstack-gbrain-install', 'bin/gstack-gbrain-detect', 'lib/gbrain-local-status.ts', 'test/helpers/agent-sdk-runner.ts', 'test/skill-e2e-setup-gbrain-path4-local-pglite.test.ts', 
      'test/helpers/setup-gbrain-sandbox.ts', 'lib/redact-engine.ts', 'lib/redact-patterns.ts', 'test/helpers/setup-gbrain-fixture-command.ts',  'lib/gbrain-exec.ts', 'bin/gstack-gbrain-lib.sh', 'bin/gstack-egress-lib.sh', 'bin/gstack-egress-receipt', 'test/helpers/office-hours-attempt.ts',  'test/helpers/e2e-gate.ts'],
 
   // AskUserQuestion format regression (RECOMMENDATION + Completeness: N/10)
@@ -617,7 +608,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   // Expanded coverage (CT3) — 6 non-plan-review skills inherit Pros/Cons via preamble
 
   // /plan-tune (v1 observational)
-  'plan-tune-inspect':         ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'plan-tune/**', 'scripts/question-registry.ts', 'scripts/psychographic-signals.ts', 'scripts/one-way-doors.ts', 'bin/gstack-question-log', 'bin/gstack-question-preference', 'bin/gstack-developer-profile', 'test/skill-e2e-plan-tune.test.ts'],
+  'plan-tune-inspect':         ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'plan-tune/**', 'scripts/question-registry.ts', 'scripts/psychographic-signals.ts', 'scripts/one-way-doors.ts', 'bin/gstack-question-log', 'bin/gstack-question-preference', 'bin/gstack-developer-profile', 'test/skill-e2e-plan-tune.test.ts'],
 
   // /plan-tune cathedral (T16 — 5 E2E scenarios, all gate per D12)
 
@@ -661,7 +652,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
     'test/helpers/ship-hook-actor.ts',  
     'test/helpers/workflow-excerpt.ts', 'test/helpers/agent-sdk-runner.ts', 'test/skill-e2e-ship-hook-consent.test.ts',
      'test/helpers/e2e-gate.ts'],
-  'ship-base-branch': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'ship/**', 'bin/gstack-repo-mode', 'test/skill-e2e-review-attribution.test.ts',
+  'ship-base-branch': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'ship/**', 'bin/gstack-repo-mode', 'test/skill-e2e-review-attribution.test.ts',
     'scripts/resolvers/testing.ts'
   ],
   'ship-local-workflow': [ 'ship/**', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-workflow.test.ts',
@@ -671,29 +662,29 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   ],
 
   // Retro
-  'retro':             ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'bin/gstack-retro-metrics', 'retro/**', 'test/skill-e2e-retro.test.ts'],
-  'retro-base-branch': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'bin/gstack-retro-metrics', 'retro/**', 'test/skill-e2e-retro.test.ts'],
+  'retro':             ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'bin/gstack-retro-metrics', 'retro/**', 'test/skill-e2e-retro.test.ts'],
+  'retro-base-branch': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'bin/gstack-retro-metrics', 'retro/**', 'test/skill-e2e-retro.test.ts'],
 
   // CSO
-  'cso-full-audit':   ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'cso/**', 'lib/cso/**', 'lib/redact-engine.ts', 'lib/redact-patterns.ts',   'test/skill-e2e-cso.test.ts'],
-  'cso-diff-mode':    ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'cso/**', 'lib/cso/**', 'lib/redact-engine.ts', 'lib/redact-patterns.ts',   'test/skill-e2e-cso.test.ts'],
-  'cso-infra-scope':  ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'cso/**', 'lib/cso/**', 'lib/redact-engine.ts', 'lib/redact-patterns.ts',   'test/skill-e2e-cso.test.ts'],
+  'cso-full-audit':   ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'cso/**', 'lib/cso/**', 'lib/redact-engine.ts', 'lib/redact-patterns.ts',   'test/skill-e2e-cso.test.ts'],
+  'cso-diff-mode':    ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'cso/**', 'lib/cso/**', 'lib/redact-engine.ts', 'lib/redact-patterns.ts',   'test/skill-e2e-cso.test.ts'],
+  'cso-infra-scope':  ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'cso/**', 'lib/cso/**', 'lib/redact-engine.ts', 'lib/redact-patterns.ts',   'test/skill-e2e-cso.test.ts'],
 
   // Learnings
-  'learnings-show': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'learn/**', 'bin/gstack-learnings-search', 'bin/gstack-learnings-log', 'scripts/resolvers/learnings.ts', 'test/skill-e2e-learnings.test.ts'],
+  'learnings-show': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'learn/**', 'bin/gstack-learnings-search', 'bin/gstack-learnings-log', 'scripts/resolvers/learnings.ts', 'test/skill-e2e-learnings.test.ts'],
 
   // Session Intelligence (timeline, context recovery, /context-save + /context-restore)
-  'timeline-event-flow':            ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'bin/gstack-timeline-log', 'bin/gstack-timeline-read', 'test/skill-e2e-session-intelligence.test.ts'],
-  'context-recovery-artifacts':     ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'scripts/resolvers/preamble.ts', 'bin/gstack-timeline-log', 'bin/gstack-slug', 'learn/**', 'test/skill-e2e-session-intelligence.test.ts'],
-  'context-save-writes-file':       ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'context-save/**', 'bin/gstack-slug', 'test/skill-e2e-session-intelligence.test.ts'],
-  'context-restore-loads-latest':   ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'context-restore/**', 'bin/gstack-slug', 'test/skill-e2e-session-intelligence.test.ts'],
+  'timeline-event-flow':            ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'bin/gstack-timeline-log', 'bin/gstack-timeline-read', 'test/skill-e2e-session-intelligence.test.ts'],
+  'context-recovery-artifacts':     ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'scripts/resolvers/preamble.ts', 'bin/gstack-timeline-log', 'bin/gstack-slug', 'learn/**', 'test/skill-e2e-session-intelligence.test.ts'],
+  'context-save-writes-file':       ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'context-save/**', 'bin/gstack-slug', 'test/skill-e2e-session-intelligence.test.ts'],
+  'context-restore-loads-latest':   ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'context-restore/**', 'bin/gstack-slug', 'test/skill-e2e-session-intelligence.test.ts'],
 
   // Context skills E2E (live-fire, Skill-tool routing path) — see
   // test/skill-e2e-context-skills.test.ts. These are periodic-tier because
   // each one spawns claude -p and costs ~$0.20-$0.40. Collectively they
   // verify the thing the /checkpoint → /context-save rename was for.
   'context-save-routing':                  [ 'context-save/**', 'scripts/resolvers/preamble.ts', 'test/skill-e2e-context-skills.test.ts'],
-  'context-save-then-restore-roundtrip':   ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'context-save/**', 'context-restore/**', 'bin/gstack-slug', 'test/skill-e2e-context-skills.test.ts'],
+  'context-save-then-restore-roundtrip':   ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'context-save/**', 'context-restore/**', 'bin/gstack-slug', 'test/skill-e2e-context-skills.test.ts'],
   'context-restore-fragment-match':        [ 'context-restore/**', 'test/skill-e2e-context-skills.test.ts'],
   'context-restore-empty-state':           [ 'context-restore/**', 'test/skill-e2e-context-skills.test.ts'],
   'context-restore-list-delegates':        [ 'context-restore/**', 'test/skill-e2e-context-skills.test.ts'],
@@ -724,8 +715,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
     'test/helpers/skill-fixture.ts', 'test/helpers/outside-voice-fixture.ts',  'test/helpers/outside-voice-evidence.ts',   'test/fixtures/outside-async-task-m-events.json', 'test/skill-e2e-outside-voice.test.ts',
     'test/helpers/outside-voice-receipt.ts', 
      'test/helpers/e2e-gate.ts'],
-  'outside-voice-claude-code-to-codex': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-    'review/**', 'codex/**', 'hosts/claude.ts', 'hosts/define-host.ts',
+  'outside-voice-claude-code-to-codex': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'review/**', 'codex/**', 'hosts/claude.ts', 'hosts/define-host.ts',
     'scripts/gen-skill-docs.ts', 'scripts/resolvers/index.ts', 'scripts/resolvers/outside-voice.ts',
     'scripts/resolvers/constants.ts', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts',
     'bin/gstack-codex-probe', 'lib/outside-review-result.ts', 'test/helpers/session-runner.ts',
@@ -733,8 +723,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
     'test/helpers/skill-fixture.ts', 'test/helpers/outside-voice-fixture.ts',  'test/helpers/outside-voice-evidence.ts',   'test/fixtures/outside-async-task-m-events.json', 'test/skill-e2e-outside-voice.test.ts', 'test/helpers/codex-session-runner.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/outside-voice-receipt.ts'],
 
   // Disabled means no extra plan review, including a native Agent fallback.
-  'outside-plan-disabled-no-fallback': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-    'test/fixtures/disabled-retained-record.json',
+  'outside-plan-disabled-no-fallback': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'test/fixtures/disabled-retained-record.json',
     'scripts/resolvers/testing.ts', 'scripts/resolvers/preamble/generate-ask-user-format.ts',
     
     "test/fixtures/plan-scope-recovery-av.json",
@@ -759,9 +748,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
 
 
   // Coverage audit (shared fixture) + triage + gates
-  'ship-coverage-audit': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-    
-    "test/fixtures/coverage-audit-aw.json",
+  'ship-coverage-audit': ['bin/gstack-state-root.sh', 'lib/state-root.ts', "test/fixtures/coverage-audit-aw.json",
 
     
     "test/fixtures/coverage-checkbox-tail-av.json",
@@ -804,11 +791,9 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
      "scripts/resolvers/preamble/generate-preamble-bash.ts", "scripts/resolvers/preamble/generate-completion-status.ts",
     'test/helpers/coverage-audit.ts', 'test/helpers/office-hours-attempt.ts',  'scripts/resolvers/testing.ts', 'scripts/resolvers/preamble/generate-ask-user-format.ts', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts' 
   ],
-  'ship-triage': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'ship/**', 'bin/gstack-repo-mode', 'test/skill-e2e-triage.test.ts',
+  'ship-triage': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'ship/**', 'bin/gstack-repo-mode', 'test/skill-e2e-triage.test.ts',
     'scripts/resolvers/testing.ts'
   ],
-  'ship-docsync': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'ship/**', 'document-release/**', 'scripts/gen-skill-docs.ts', 'scripts/resolvers/sections.ts', 'test/skill-e2e-ship-docsync.test.ts',
-    'scripts/resolvers/testing.ts', 'test/helpers/docsync-*.ts', 'bin/gstack-skill-start', 'bin/gstack-session-kind', 'test/helpers/qa-checkpoint-evidence.ts',    'test/helpers/qa-functional-observer.ts',  'test/helpers/e2e-gate.ts', 'test/helpers/qa-evidence-producer.ts', 'test/helpers/qa-functional-fixture.ts'],
   'ship-docsync-completion': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'ship/**', 'document-release/**', 'test/skill-e2e-ship-docsync.test.ts', 'test/helpers/docsync-*.ts', 'test/helpers/session-runner.ts', 'test/helpers/hermetic-env.ts', 'bin/gstack-skill-start', 'bin/gstack-session-kind', 'scripts/resolvers/sections.ts', 'scripts/resolvers/preamble/generate-ask-user-format.ts', 'scripts/gen-skill-docs.ts', 'scripts/resolvers/testing.ts', 'test/helpers/qa-checkpoint-evidence.ts',    'test/helpers/qa-functional-observer.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/qa-evidence-producer.ts', 'test/helpers/qa-functional-fixture.ts'],
   'ship-docsync-current': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'ship/**', 'document-release/**', 'test/skill-e2e-ship-docsync.test.ts', 'test/helpers/docsync-*.ts', 'test/helpers/session-runner.ts', 'test/helpers/hermetic-env.ts', 'bin/gstack-skill-start', 'bin/gstack-session-kind', 'scripts/resolvers/sections.ts', 'scripts/resolvers/preamble/generate-ask-user-format.ts', 'scripts/gen-skill-docs.ts', 'scripts/resolvers/testing.ts', 'test/helpers/qa-checkpoint-evidence.ts',    'test/helpers/qa-functional-observer.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/qa-evidence-producer.ts', 'test/helpers/qa-functional-fixture.ts'],
   'ship-docsync-failure': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'ship/**', 'document-release/**', 'test/skill-e2e-ship-docsync.test.ts', 'test/helpers/docsync-*.ts', 'test/helpers/session-runner.ts', 'test/helpers/hermetic-env.ts', 'bin/gstack-skill-start', 'bin/gstack-session-kind', 'scripts/resolvers/sections.ts', 'scripts/resolvers/preamble/generate-ask-user-format.ts', 'scripts/gen-skill-docs.ts', 'scripts/resolvers/testing.ts', 'test/helpers/qa-checkpoint-evidence.ts',    'test/helpers/qa-functional-observer.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/qa-evidence-producer.ts', 'test/helpers/qa-functional-fixture.ts'],
@@ -817,8 +802,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   // spawned-marked subagent. Deps name every behavior under test — the
   // session-kind override, the skill-start gates, both hooks + the shared
   // directive, and the AUQ prose rule — so changing any of them selects it.
-  'docsync-spawned': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'hosts/claude/hooks/hook-log.ts', 
-    'ship/sections/pr-body.md',
+  'docsync-spawned': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'ship/sections/pr-body.md',
     'document-release/**',
     'ship/sections/documentation.md',
     'ship/sections/documentation.md.tmpl',
@@ -829,13 +813,13 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
     'hosts/claude/hooks/auq-error-fallback-hook.ts',
     'hosts/claude/hooks/spawned-directive.ts',
     'scripts/resolvers/preamble/generate-ask-user-format.ts',
-    'test/skill-e2e-docsync-spawned.test.ts', 'test/helpers/qa-checkpoint-evidence.ts',    'test/helpers/qa-functional-observer.ts',  'test/helpers/e2e-gate.ts', 'test/helpers/qa-evidence-producer.ts', 'test/helpers/qa-functional-fixture.ts'],
+    'test/skill-e2e-docsync-spawned.test.ts', 'test/helpers/qa-checkpoint-evidence.ts',    'test/helpers/qa-functional-observer.ts',  'test/helpers/e2e-gate.ts', 'test/helpers/qa-evidence-producer.ts', 'test/helpers/qa-functional-fixture.ts', 'hosts/claude/hooks/hook-log.ts'],
 
   // Design
-  'design-consultation-core':       [ 'design-consultation/**', 'lib/design-catalog.ts', 'lib/design-md.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/llm-judge.ts', 'test/skill-e2e-design.test.ts', 'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'design-consultation/sections/**',  'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/helpers/aside-available.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/office-hours-attempt.ts'],
-  'design-consultation-existing':   [ 'design-consultation/**', 'lib/design-md.ts', 'bin/gstack-design-md.ts', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-design.test.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/helpers/aside-available.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
-  'design-consultation-research':   [ 'design-consultation/**', 'scripts/resolvers/aside.ts', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-design.test.ts', 'test/helpers/skill-fixture.ts',  'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'design-consultation/sections/**',  'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/helpers/aside-available.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
-  'design-consultation-preview':    [ 'design-consultation/**', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-design.test.ts',  'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/helpers/aside-available.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
+  'design-consultation-core':       [ 'design-consultation/**', 'lib/design-catalog.ts', 'lib/design-md.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/llm-judge.ts', 'test/skill-e2e-design.test.ts', 'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'design-consultation/sections/**',  'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/fixtures/review-eval-design-slop.css', 'test/helpers/aside-available.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/office-hours-attempt.ts'],
+  'design-consultation-existing':   [ 'design-consultation/**', 'lib/design-md.ts', 'bin/gstack-design-md.ts', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-design.test.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/fixtures/review-eval-design-slop.css', 'test/helpers/aside-available.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
+  'design-consultation-research':   [ 'design-consultation/**', 'scripts/resolvers/aside.ts', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-design.test.ts', 'test/helpers/skill-fixture.ts',  'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'design-consultation/sections/**',  'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/fixtures/review-eval-design-slop.css', 'test/helpers/aside-available.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
+  'design-consultation-preview':    [ 'design-consultation/**', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-design.test.ts',  'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/fixtures/review-eval-design-slop.css', 'test/helpers/aside-available.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
   'plan-design-review-no-ui-scope': [
     
     "test/fixtures/plan-scope-recovery-av.json",
@@ -843,16 +827,16 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
     
 
      "scripts/resolvers/preamble/generate-preamble-bash.ts", "scripts/resolvers/preamble/generate-completion-status.ts",
-    'scripts/resolvers/preamble/generate-ask-user-format.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/helpers/aside-available.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
-  'design-review-fix':              ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'design-review/**', 'scripts/resolvers/aside.ts', 'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'lib/design-catalog.ts', 'browse/src/**', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-design.test.ts',
-    'scripts/resolvers/testing.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/helpers/aside-available.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
+    'scripts/resolvers/preamble/generate-ask-user-format.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/fixtures/review-eval-design-slop.css', 'test/helpers/aside-available.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
+  'design-review-fix':              ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'design-review/**', 'scripts/resolvers/aside.ts', 'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'lib/design-catalog.ts', 'browse/src/**', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-design.test.ts',
+    'scripts/resolvers/testing.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/review-eval-design-slop.html', 'test/fixtures/review-eval-design-slop.css', 'test/helpers/aside-available.ts', 'test/helpers/fake-impeccable.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
   // Design detector (user-installed impeccable engine) through the fake engine shim: source mode on a diff and DOM mode on a served page.
-  'design-review-detector-shim':    ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'design-review/**', 'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'lib/design-catalog.ts', 'lib/design-detect-contract.ts', 'lib/dom-dump-script.ts', 'lib/dom-dump.js', 'bin/gstack-design-detect.ts', 'test/helpers/fake-impeccable.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/impeccable-detect-sample.json', 'test/fixtures/review-eval-design-slop.*', 'test/skill-e2e-design.test.ts',
+  'design-review-detector-shim':    ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'design-review/**', 'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'lib/design-catalog.ts', 'lib/design-detect-contract.ts', 'lib/dom-dump-script.ts', 'lib/dom-dump.js', 'bin/gstack-design-detect.ts', 'test/helpers/fake-impeccable.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/impeccable-detect-sample.json', 'test/fixtures/review-eval-design-slop.*', 'test/skill-e2e-design.test.ts',
     'scripts/resolvers/testing.ts', 'test/helpers/aside-available.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
-  'design-review-detector-shim-dom': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'design-review/**', 'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'lib/design-detect-contract.ts', 'lib/dom-dump-script.ts', 'lib/dom-dump.js', 'bin/gstack-design-detect.ts', 'browse/src/**', 'test/helpers/fake-impeccable.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/impeccable-detect-sample.json', 'test/fixtures/review-eval-design-slop.*', 'test/skill-e2e-design.test.ts',
+  'design-review-detector-shim-dom': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'design-review/**', 'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'lib/design-detect-contract.ts', 'lib/dom-dump-script.ts', 'lib/dom-dump.js', 'bin/gstack-design-detect.ts', 'browse/src/**', 'test/helpers/fake-impeccable.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/impeccable-detect-sample.json', 'test/fixtures/review-eval-design-slop.*', 'test/skill-e2e-design.test.ts',
     'scripts/resolvers/testing.ts', 'test/helpers/aside-available.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
-  'design-review-plugin-handoff': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'design-review/**', 'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'scripts/resolvers/testing.ts', 'lib/design-catalog.ts', 'lib/design-detect-contract.ts', 'bin/gstack-design-detect.ts', 'test/helpers/hermetic-env.ts', 'test/helpers/fake-impeccable.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/impeccable-detect-sample.json', 'test/fixtures/review-eval-design-slop.html', 'test/skill-e2e-design.test.ts', 'test/helpers/aside-available.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
-  'design-html-slop-gate':          ['bin/gstack-state-root.sh', 'lib/state-root.ts',   'design-html/**', 'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'lib/design-detect-contract.ts', 'bin/gstack-design-detect.ts', 'test/helpers/fake-impeccable.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/impeccable-detect-sample.json', 'test/skill-e2e-design.test.ts', 'test/fixtures/review-eval-design-slop.html', 'test/helpers/aside-available.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
+  'design-review-plugin-handoff': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'design-review/**', 'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'scripts/resolvers/testing.ts', 'lib/design-catalog.ts', 'lib/design-detect-contract.ts', 'bin/gstack-design-detect.ts', 'test/helpers/hermetic-env.ts', 'test/helpers/fake-impeccable.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/impeccable-detect-sample.json', 'test/fixtures/review-eval-design-slop.html', 'test/fixtures/review-eval-design-slop.css', 'test/skill-e2e-design.test.ts', 'test/helpers/aside-available.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
+  'design-html-slop-gate':          ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'design-html/**', 'scripts/resolvers/design.ts', 'scripts/resolvers/outside-voice.ts', 'lib/design-detect-contract.ts', 'bin/gstack-design-detect.ts', 'test/helpers/fake-impeccable.ts', 'test/fixtures/fake-impeccable.ts', 'test/fixtures/impeccable-detect-sample.json', 'test/skill-e2e-design.test.ts', 'test/fixtures/review-eval-design-slop.html', 'test/fixtures/review-eval-design-slop.css', 'test/helpers/aside-available.ts', 'test/helpers/llm-judge.ts', 'test/helpers/office-hours-attempt.ts'],
 
   // /diagram (diagram-render bundle consumers). Triplet = deterministic
   // functional (gate); authoring quality = LLM-judged benchmark (periodic).
@@ -860,24 +844,23 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   // bin/gstack-render.ts): Aside when it is running, the browse daemon
   // otherwise — so both engines are deps. Triplet = deterministic functional
   // (gate); authoring quality = LLM-judged benchmark (periodic).
-  'diagram-triplet':            ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'diagram/**', 'lib/diagram-render/**', 'lib/aside-render.ts', 'bin/gstack-render.ts', 'test/helpers/aside-available.ts', 'browse/src/**', 'test/skill-e2e-diagram.test.ts', 'test/helpers/llm-judge.ts'],
-  'diagram-authoring-quality':  ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'diagram/**', 'lib/diagram-render/**', 'lib/aside-render.ts', 'bin/gstack-render.ts', 'test/helpers/aside-available.ts', 'browse/src/**', 'test/helpers/llm-judge.ts', 'test/skill-e2e-diagram.test.ts'],
+  'diagram-triplet':            ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'diagram/**', 'lib/diagram-render/**', 'lib/aside-render.ts', 'bin/gstack-render.ts', 'test/helpers/aside-available.ts', 'browse/src/**', 'test/skill-e2e-diagram.test.ts', 'test/helpers/llm-judge.ts'],
+  'diagram-authoring-quality':  ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'diagram/**', 'lib/diagram-render/**', 'lib/aside-render.ts', 'bin/gstack-render.ts', 'test/helpers/aside-available.ts', 'browse/src/**', 'test/helpers/llm-judge.ts', 'test/skill-e2e-diagram.test.ts'],
 
   // gstack-upgrade
   'gstack-upgrade-happy-path': [ 'gstack-upgrade/**', 'test/skill-e2e-workflow.test.ts', 'test/fixtures/coverage-audit-fixture.ts', 'test/helpers/coverage-audit.ts', 'test/helpers/office-hours-attempt.ts'],
 
   // Deploy skills
   'land-and-deploy-workflow':      [ 'land-and-deploy/**', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-deploy.test.ts'],
-  'land-and-deploy-first-run':     ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'land-and-deploy/**', 'scripts/gen-skill-docs.ts', 'bin/gstack-slug', 'test/skill-e2e-deploy.test.ts'],
-  'land-and-deploy-review-gate':   ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'land-and-deploy/**', 'bin/gstack-review-read', 'test/skill-e2e-deploy.test.ts'],
-  'canary-workflow':               ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'canary/**', 'scripts/resolvers/aside.ts', 'browse/src/**', 'test/skill-e2e-deploy.test.ts'],
-  'benchmark-workflow':            ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'benchmark/**', 'scripts/resolvers/aside.ts', 'browse/src/**', 'test/skill-e2e-deploy.test.ts'],
+  'land-and-deploy-first-run':     ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'land-and-deploy/**', 'scripts/gen-skill-docs.ts', 'bin/gstack-slug', 'test/skill-e2e-deploy.test.ts'],
+  'land-and-deploy-review-gate':   ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'land-and-deploy/**', 'bin/gstack-review-read', 'test/skill-e2e-deploy.test.ts'],
+  'canary-workflow':               ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'canary/**', 'scripts/resolvers/aside.ts', 'browse/src/**', 'test/skill-e2e-deploy.test.ts'],
+  'benchmark-workflow':            ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'benchmark/**', 'scripts/resolvers/aside.ts', 'browse/src/**', 'test/skill-e2e-deploy.test.ts'],
   'setup-deploy-workflow':         [ 'setup-deploy/**', 'scripts/gen-skill-docs.ts', 'test/skill-e2e-deploy.test.ts'],
 
 
   // Autoplan
-  'autoplan-dual-voice': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 
-     'test/helpers/hermetic-env.ts',
+  'autoplan-dual-voice': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'test/helpers/hermetic-env.ts',
     'test/helpers/autoplan-dual-voice-evidence.ts', 
     'test/fixtures/autoplan-dual-false-positive-6bd.json',
     'test/helpers/autoplan-method-read-audit.ts', 
@@ -1043,7 +1026,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
   // frontmatter. Touched by anything that changes resolver output, gen
   // pipeline, detection helper, refresh subcommand, or the on-demand
   // docs the resolver points to.
-  'office-hours-brain-writeback': ['bin/gstack-state-root.sh', 'lib/state-root.ts',  'office-hours/sections/**',
+  'office-hours-brain-writeback': ['bin/gstack-state-root.sh', 'lib/state-root.ts', 'office-hours/sections/**',
     'scripts/resolvers/gbrain.ts',
     'scripts/gen-skill-docs.ts',
     'bin/gstack-gbrain-detect',
@@ -1097,6 +1080,7 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
     'ship/SKILL.md', 'test/helpers/e2e-gate.ts'],
 
   'office-hours-section-loading': [ 'office-hours/**', 'bin/gstack-office-hours-review', 'lib/office-hours-review.ts', 'lib/fs-atomic.ts', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts', 'scripts/resolvers/sections.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/carve-guards.ts', 'test/helpers/auq-sdk-capture.ts',  'test/helpers/office-hours-completion.ts', 'test/helpers/llm-judge.ts', 'test/helpers/session-runner.ts', 'test/skill-e2e-office-hours-section-loading.test.ts', 'test/helpers/agent-sdk-runner.ts', 'test/helpers/auq-native-capture.ts', 'test/helpers/auto-decision-state.ts', 'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/capture-parity-baseline.ts', 'test/helpers/claude-pty-runner.ts', 'test/helpers/pty/**', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/eng-cache-writer-decision.ts', 'test/helpers/hermetic-skill-runtime.ts', 'test/helpers/native-auto-decide.ts', 'test/helpers/owned-claude-transcript.ts', 'test/helpers/parity-harness.ts', 'test/helpers/plan-count-artifacts.ts', 'test/helpers/plan-count-file-permission.ts', 'test/helpers/plan-count-fixture.ts', 'test/helpers/plan-count-pending-exit.ts', 'test/helpers/plan-count-pending-question.ts', 'test/helpers/plan-count-transcript.ts', 'test/helpers/plan-floor-review.ts', 'test/helpers/plan-floor-target.ts', 'test/helpers/plan-scope-selection.ts', 'test/helpers/plan-seed-submission.ts', 'test/helpers/plan-skill-question-events.ts', 'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/plan-skill-questions.ts', 'test/helpers/pty-screen.ts', 'test/helpers/pty-trust-dialog.ts', 'test/helpers/skill-census.ts'],
+  'office-hours-design-draft': [ 'office-hours/**', 'lib/office-hours-review.ts', 'scripts/resolvers/review-dashboard.ts', 'scripts/resolvers/plan-gates.ts', 'scripts/resolvers/spec-review.ts', 'scripts/resolvers/outside-voice-steps.ts', 'scripts/resolvers/review-scope.ts', 'scripts/resolvers/outside-voice.ts', 'scripts/resolvers/sections.ts', 'scripts/gen-skill-docs.ts', 'test/helpers/carve-guards.ts', 'test/helpers/auq-sdk-capture.ts',  'test/helpers/office-hours-completion.ts', 'test/helpers/llm-judge.ts', 'test/helpers/session-runner.ts', 'test/skill-e2e-office-hours-design-draft.test.ts', 'test/helpers/agent-sdk-runner.ts', 'test/helpers/auq-native-capture.ts', 'test/helpers/auto-decision-state.ts', 'test/helpers/autoplan-artifact-digest.ts', 'test/helpers/autoplan-artifact-permission.ts', 'test/helpers/autoplan-artifact-recorder.ts', 'test/helpers/capture-parity-baseline.ts', 'test/helpers/claude-pty-runner.ts', 'test/helpers/pty/**', 'test/helpers/dx-selected-navigation.ts', 'test/helpers/e2e-gate.ts', 'test/helpers/eng-cache-writer-decision.ts', 'test/helpers/hermetic-skill-runtime.ts', 'test/helpers/native-auto-decide.ts', 'test/helpers/owned-claude-transcript.ts', 'test/helpers/parity-harness.ts', 'test/helpers/plan-count-artifacts.ts', 'test/helpers/plan-count-file-permission.ts', 'test/helpers/plan-count-fixture.ts', 'test/helpers/plan-count-pending-exit.ts', 'test/helpers/plan-count-pending-question.ts', 'test/helpers/plan-count-transcript.ts', 'test/helpers/plan-floor-review.ts', 'test/helpers/plan-floor-target.ts', 'test/helpers/plan-scope-selection.ts', 'test/helpers/plan-seed-submission.ts', 'test/helpers/plan-skill-question-events.ts', 'test/helpers/plan-skill-question-hook-scope.ts', 'test/helpers/plan-skill-questions.ts', 'test/helpers/pty-screen.ts', 'test/helpers/pty-trust-dialog.ts', 'test/helpers/skill-census.ts'],
   'plan-devex-peer-comparison-classification': [
     
     
@@ -1122,10 +1106,11 @@ export const E2E_TOUCHFILES: Record<string, string[]> = {
 };
 
 /**
- * E2E test tiers — 'gate' blocks PRs, 'periodic' runs weekly/on-demand.
+ * E2E test tiers — 'gate' blocks PRs, 'periodic' runs weekly/on-demand,
+ * 'marathon' keeps full start-to-finish flows in a non-blocking lane only.
  * Must have exactly the same keys as E2E_TOUCHFILES.
  */
-export const E2E_TIERS: Record<string, 'gate' | 'periodic'> = {
+export const E2E_TIERS: Record<string, 'gate' | 'periodic' | 'marathon'> = {
   'ship-skipped-queued-finding': 'gate',
   'investigate-owned-completion': 'gate',
   'investigate-owned-abort': 'gate',
@@ -1250,6 +1235,7 @@ export const E2E_TIERS: Record<string, 'gate' | 'periodic'> = {
   'plan-ceo-review-plan-mode': 'gate',
   'plan-eng-review-plan-mode': 'periodic',
   'plan-design-review-plan-mode': 'periodic',
+  'plan-design-review-plan-mode-smoke': 'periodic',
   'plan-devex-review-plan-mode': 'gate',
   'plan-mode-no-op': 'gate',
   // v1.21+ auto-mode regression tests
@@ -1283,7 +1269,7 @@ export const E2E_TIERS: Record<string, 'gate' | 'periodic'> = {
   'plan-design-finding-floor': 'periodic',  // stochastic ask-first (see plan-mode-handshake note); periodic
   'plan-devex-finding-floor':  'gate',
   'plan-eng-multi-finding-batching': 'periodic',
-  'plan-ceo-split-overflow': 'periodic',
+  'plan-ceo-split-overflow': 'marathon', // Full /plan-ceo-review through split overflow (504–1188 s on 2.1.251)
 
   // Privacy gate for gstack-brain-sync — periodic (non-deterministic LLM call,
   // costs ~$0.30-$0.50 per run, not needed on every commit)
@@ -1355,7 +1341,6 @@ export const E2E_TIERS: Record<string, 'gate' | 'periodic'> = {
   'ship-local-hook-preservation': 'gate',
   'ship-coverage-audit': 'gate',
   'ship-triage': 'gate',
-  'ship-docsync': 'gate',
   'ship-docsync-missing-marker': 'gate',
   'ship-docsync-missing-asset': 'gate',
   'ship-docsync-launch-failure': 'gate',
@@ -1480,7 +1465,8 @@ export const E2E_TIERS: Record<string, 'gate' | 'periodic'> = {
   'arm-benchmark-native-overbuild': 'periodic',
   'arm-benchmark-crud-endpoint': 'periodic',
   'arm-benchmark-bugfix-decoys': 'periodic',
-  'office-hours-section-loading': 'periodic', // Full startup design/review/approval workflow
+  'office-hours-section-loading': 'marathon', // Full startup design/review/approval workflow (1–3 real review rounds, ~20 min)
+  'office-hours-design-draft': 'periodic', // Same interview through the design-creating Write (~5 min)
   'plan-decision-classification': 'periodic',
   'plan-devex-peer-comparison-classification': 'periodic',
   'health-reporting': 'periodic',
@@ -1563,6 +1549,9 @@ export const GLOBAL_TOUCHFILES = [
   'scripts/lib/shard-engine.ts',     // The shard engine test-strict-output.ts re-exports (moved there in the W2 refactor)
   // Canonical paid execution and its shared time allocations affect every paid test.
   'scripts/test-paid-shards.ts',
+  'scripts/lib/paid-cases.ts',       // Case/trial shard keys, plan and report moved out of test-paid-shards.ts
+  'scripts/lib/paid-plan.ts',
+  'scripts/lib/paid-report.ts',
   'scripts/test-pr-profile.ts',
   'test/helpers/eval-budgets.ts',
 
@@ -1581,3 +1570,310 @@ export const GLOBAL_TOUCHFILES = [
   // diffed per key, so a data-only edit runs just the affected tests.
   // Map-diff fails CLOSED — any error on that path still runs everything.
 ];
+
+/**
+ * Eval kind per live case (every E2E_TIERS and LLM_JUDGE_TOUCHFILES key).
+ * The kind fixes the trial policy before the run (EVAL_POLICY in
+ * periodic-exclude-data.ts):
+ *   rule     - one trial; any failed assertion fails the verdict. The default.
+ *   behavior - a panel of independent trials, PASS at the policy majority;
+ *              needs a BEHAVIOR_WHY entry naming the tolerated deviation.
+ *   judge    - an LLM-judge score of a static input, sampled as a panel.
+ * Reclassification is a reviewed diff, never a runtime switch.
+ */
+export const E2E_KINDS: Record<string, 'rule' | 'behavior' | 'judge'> = {
+  'ship-skipped-queued-finding': 'rule',
+  'investigate-owned-completion': 'rule',
+  'investigate-owned-abort': 'rule',
+  'investigate-owned-ending-error': 'rule',
+  'shared-libs-review-path-eligibility': 'rule',
+  'shared-libs-review-index-flags': 'rule',
+  'shared-libs-review-prior-coverage': 'rule',
+  'shared-libs-codex-read-only': 'rule',
+  'shared-libs-read-only': 'rule',
+  'shared-libs-unsupported-git': 'rule',
+  'shared-libs-review-lifecycle': 'rule',
+  'shared-libs-review-revalidation': 'rule',
+  'shared-libs-opportunity-judgment': 'behavior',
+  'shared-libs-pr-coverage': 'rule',
+  'shared-libs-plan-callers': 'rule',
+  'browse-basic': 'rule',
+  'browse-snapshot': 'rule',
+  'aside-browse-basic': 'rule',
+  'aside-browse-flow': 'rule',
+  'aside-qa-quick': 'rule',
+  'aside-scrape-json': 'rule',
+  'aside-canary-quick': 'rule',
+  'hermetic-canary': 'rule',
+  'hermetic-sentinel': 'rule',
+  'skillmd-setup-discovery': 'rule',
+  'skillmd-no-local-binary': 'rule',
+  'skillmd-outside-git': 'rule',
+  'session-awareness': 'rule',
+  'operational-learning': 'rule',
+  'first-task-scaffold': 'rule',
+  'qa-quick': 'rule',
+  'qa-b6-static': 'rule',
+  'qa-b7-spa': 'rule',
+  'qa-b8-checkout': 'rule',
+  'qa-only-no-fix': 'rule',
+  'qa-fix-loop': 'rule',
+  'qa-bootstrap': 'rule',
+  'review-exploratory-small-cli': 'rule',
+  'ship-exploratory-small-cli': 'rule',
+  'ship-exploratory-unavailable': 'rule',
+  'ship-exploratory-plan-checks': 'rule',
+  'ship-exploratory-late-input': 'rule',
+  'qa-functional-cli-report': 'rule',
+  'qa-functional-webhook-report': 'rule',
+  'qa-functional-cli-fix': 'rule',
+  'qa-functional-webhook-fix': 'rule',
+  'review-sql-injection': 'rule',
+  'review-enum-completeness': 'rule',
+  'review-base-branch': 'rule',
+  'review-design-lite': 'behavior',
+  'review-coverage-audit': 'rule',
+  'review-dashboard-via': 'rule',
+  'review-army-migration-safety': 'rule',
+  'review-army-perf-n-plus-one': 'rule',
+  'review-army-delivery-audit': 'rule',
+  'review-army-quality-score': 'rule',
+  'review-army-json-findings': 'rule',
+  'review-army-red-team': 'behavior',
+  'review-army-consensus': 'behavior',
+  'review-army-simplification': 'behavior',
+  'review-army-simplification-precision': 'behavior',
+  'office-hours-spec-review': 'rule',
+  'office-hours-brain-writeback': 'behavior',
+  'gbrain-roundtrip-local': 'rule',
+  'sync-gbrain-read-ready': 'rule',
+  'sync-gbrain-read-unknown': 'rule',
+  'office-hours-forcing-energy': 'behavior',
+  'office-hours-builder-wildness': 'behavior',
+  'plan-ceo-review': 'rule',
+  'plan-ceo-review-selective': 'rule',
+  'plan-ceo-review-benefits': 'rule',
+  'plan-ceo-review-expansion-energy': 'behavior',
+  'plan-eng-review': 'rule',
+  'plan-eng-review-artifact': 'rule',
+  'plan-eng-coverage-audit': 'rule',
+  'plan-review-report': 'rule',
+  'plan-ceo-review-plan-mode': 'rule',
+  'plan-eng-review-plan-mode': 'rule',
+  'plan-design-review-plan-mode': 'rule',
+  'plan-design-review-plan-mode-smoke': 'rule',
+  'ship-coverage-value': 'rule',
+  'review-test-value': 'rule',
+  'test-audit-report-only': 'rule',
+  'plan-devex-review-plan-mode': 'rule',
+  'plan-mode-no-op': 'rule',
+  'office-hours-auto-mode': 'rule',
+  'auto-decide-preserved': 'rule',
+  'auq-format-gate': 'rule',
+  'plan-ceo-mode-routing': 'rule',
+  'plan-design-with-ui-scope': 'rule',
+  'tpa-present': 'rule',
+  'tpa-absent-linux': 'rule',
+  'tpa-broken': 'rule',
+  'tpa-absent-darwin': 'rule',
+  'tpa-apple-ban': 'rule',
+  'ship-section-loading': 'rule',
+  'plan-ceo-section-loading': 'rule',
+  'carve-section-loading': 'rule',
+  'plan-eng-finding-floor': 'rule',
+  'plan-ceo-finding-floor': 'rule',
+  'plan-design-finding-floor': 'rule',
+  'plan-devex-finding-floor': 'rule',
+  'plan-eng-multi-finding-batching': 'rule',
+  'plan-ceo-split-overflow': 'rule',
+  'setup-gbrain-remote': 'rule',
+  'setup-gbrain-bad-token': 'rule',
+  'setup-gbrain-path4-local-pglite': 'rule',
+  'plan-ceo-review-format-mode': 'behavior',
+  'plan-ceo-review-format-approach': 'behavior',
+  'plan-eng-review-format-coverage': 'behavior',
+  'plan-eng-review-format-kind': 'behavior',
+  'office-hours-phase4-fork': 'behavior',
+  'llm-judge-recommendation': 'judge',
+  'plan-ceo-review-prosons-cadence': 'behavior',
+  'plan-review-prosons-format': 'behavior',
+  'plan-review-prosons-hardstop-neg': 'behavior',
+  'plan-review-prosons-neutral-neg': 'behavior',
+  'plan-tune-inspect': 'rule',
+  'codex-offered-office-hours': 'rule',
+  'codex-offered-ceo-review': 'rule',
+  'codex-offered-design-review': 'rule',
+  'codex-offered-eng-review': 'rule',
+  'timeline-event-flow': 'rule',
+  'context-recovery-artifacts': 'rule',
+  'context-save-writes-file': 'rule',
+  'context-restore-loads-latest': 'rule',
+  'context-save-routing': 'rule',
+  'context-save-then-restore-roundtrip': 'rule',
+  'context-restore-fragment-match': 'rule',
+  'context-restore-empty-state': 'rule',
+  'context-restore-list-delegates': 'rule',
+  'context-restore-legacy-compat': 'rule',
+  'context-save-list-current-branch': 'rule',
+  'context-save-list-all-branches': 'rule',
+  'ship-base-branch': 'rule',
+  'ship-local-workflow': 'rule',
+  'ship-managed-hook-refresh': 'rule',
+  'ship-unmanaged-hook-consent': 'rule',
+  'ship-local-hook-preservation': 'rule',
+  'ship-coverage-audit': 'rule',
+  'ship-triage': 'rule',
+  'ship-docsync-missing-marker': 'rule',
+  'ship-docsync-missing-asset': 'rule',
+  'ship-docsync-launch-failure': 'rule',
+  'ship-docsync-timeout-unsettled': 'rule',
+  'ship-docsync-late-result': 'rule',
+  'ship-docsync-stale-before': 'rule',
+  'ship-docsync-stale-after': 'rule',
+  'ship-docsync-recovery': 'rule',
+  'ship-docsync-completion': 'rule',
+  'ship-docsync-current': 'rule',
+  'ship-docsync-failure': 'rule',
+  'ship-docsync-store': 'rule',
+  'docsync-spawned': 'rule',
+  'retro': 'rule',
+  'retro-base-branch': 'rule',
+  'cso-full-audit': 'rule',
+  'cso-diff-mode': 'rule',
+  'cso-infra-scope': 'rule',
+  'learnings-show': 'rule',
+  'document-release': 'rule',
+  'codex-review': 'rule',
+  'codex-discover-skill': 'rule',
+  'codex-review-findings': 'rule',
+  'outside-voice-codex-to-claude-code': 'rule',
+  'outside-voice-claude-code-to-codex': 'rule',
+  'outside-plan-disabled-no-fallback': 'rule',
+  'codex-sol-scope-termination': 'rule',
+  'design-consultation-core': 'rule',
+  'design-consultation-existing': 'rule',
+  'design-consultation-research': 'rule',
+  'design-consultation-preview': 'rule',
+  'plan-design-review-no-ui-scope': 'rule',
+  'design-review-fix': 'rule',
+  'design-review-detector-shim': 'rule',
+  'design-review-detector-shim-dom': 'rule',
+  'design-review-plugin-handoff': 'rule',
+  'design-html-slop-gate': 'behavior',
+  'diagram-triplet': 'rule',
+  'diagram-authoring-quality': 'rule',
+  'gstack-upgrade-happy-path': 'rule',
+  'land-and-deploy-workflow': 'rule',
+  'land-and-deploy-first-run': 'rule',
+  'land-and-deploy-review-gate': 'rule',
+  'canary-workflow': 'rule',
+  'benchmark-workflow': 'rule',
+  'setup-deploy-workflow': 'rule',
+  'autoplan-dual-voice': 'rule',
+  'benchmark-providers-live': 'rule',
+  'scrape-match-path': 'behavior',
+  'scrape-prototype-path': 'behavior',
+  'skillify-happy-path': 'rule',
+  'skillify-provenance-refusal': 'rule',
+  'skillify-approval-reject': 'rule',
+  'journey-ideation': 'rule',
+  'journey-plan-eng': 'rule',
+  'journey-debug': 'rule',
+  'journey-qa': 'rule',
+  'journey-code-review': 'rule',
+  'journey-ship': 'rule',
+  'journey-docs': 'rule',
+  'journey-retro': 'rule',
+  'journey-design-system': 'rule',
+  'journey-visual-qa': 'rule',
+  'ios-qa-device': 'rule',
+  'arm-benchmark-native-overbuild': 'rule',
+  'arm-benchmark-crud-endpoint': 'rule',
+  'arm-benchmark-bugfix-decoys': 'rule',
+  'office-hours-section-loading': 'rule',
+  'office-hours-design-draft': 'rule',
+  'plan-decision-classification': 'rule',
+  'plan-devex-peer-comparison-classification': 'rule',
+  'health-reporting': 'rule',
+  'overlay-harness-claude-dedicated-tools-vs-bash': 'rule',
+  'overlay-harness-opus-4-7-effort-match-trivial': 'rule',
+  'overlay-harness-opus-4-7-literal-interpretation': 'rule',
+  'overlay-harness-claude-dedicated-tools-vs-bash-sonnet': 'rule',
+  'journey-negatives': 'rule',
+  'review/SKILL.md workflow': 'judge',
+  'setup-browser-cookies/SKILL.md workflow': 'judge',
+  'browse/SKILL.md reference': 'judge',
+  'setup block': 'judge',
+  'qa/SKILL.md workflow': 'judge',
+  'qa/SKILL.md health rubric': 'judge',
+  'qa/SKILL.md anti-refusal': 'judge',
+  'cross-skill greptile consistency': 'judge',
+  'ship/SKILL.md workflow': 'judge',
+  'document-release/SKILL.md workflow': 'judge',
+  'plan-ceo-review/SKILL.md modes': 'judge',
+  'plan-eng-review/SKILL.md sections': 'judge',
+  'plan-design-review/SKILL.md passes': 'judge',
+  'design-review/SKILL.md fix loop': 'judge',
+  'design-consultation/SKILL.md research': 'judge',
+  'land-and-deploy/SKILL.md workflow': 'judge',
+  'canary/SKILL.md monitoring loop': 'judge',
+  'benchmark/SKILL.md perf collection': 'judge',
+  'setup-deploy/SKILL.md platform setup': 'judge',
+  'retro/SKILL.md instructions': 'judge',
+  'qa-only/SKILL.md workflow': 'judge',
+  'gstack-upgrade/SKILL.md upgrade flow': 'judge',
+  'sync-gbrain/SKILL.md read-only readiness': 'judge',
+  'voice directive tone': 'judge',
+};
+
+/**
+ * One-line tolerance for every behavior-kind case: why an occasional
+ * deviation is acceptable product behavior. Keys equal the behavior ids of
+ * E2E_KINDS; values are non-empty.
+ */
+export const BEHAVIOR_WHY: Record<string, string> = {
+  'shared-libs-opportunity-judgment':
+    "Whether a candidate extraction is worth recommending is a judgment call; the read-only invariant stays a contract.",
+  'review-design-lite':
+    "How many of the seven design-lite checklist items the live review flags varies run to run; the fake-engine rows it must carry stay strict.",
+  'review-army-red-team':
+    "Whether the red-team lens surfaces on a small diff is a live model choice, not a contract.",
+  'review-army-consensus':
+    "Multi-specialist agreement on the planted SQL finding is a quality benchmark that tolerates an occasional miss.",
+  'review-army-simplification':
+    "Flagging the planted unnecessary structure is an advisory-lens quality judgment.",
+  'review-army-simplification-precision':
+    "Staying silent on a lean diff is a false-flag noise benchmark; an occasional advisory is acceptable noise.",
+  'office-hours-forcing-energy':
+    "The Q3 posture is scored by a live judge on generated prose; a single flat phrasing is tolerable.",
+  'office-hours-builder-wildness':
+    "Builder-mode creativity is scored by a live judge on generated prose; one conservative riff is tolerable.",
+  'office-hours-brain-writeback':
+    "The model's interpretation of the gbrain writeback instruction (page shape, tags) varies; no secret or safety step rides on it.",
+  'office-hours-phase4-fork':
+    "Phase 4 asks the model to invent 2-3 architectures; surfacing the fork with its reasoning is open-ended generation.",
+  'plan-ceo-review-expansion-energy':
+    "Expansion framing is scored by a live judge on generated proposals; one flat proposal set is tolerable.",
+  'plan-ceo-review-format-mode':
+    "Mode-question wording (Completeness line vs kind note) is live formatting of one AskUserQuestion.",
+  'plan-ceo-review-format-approach':
+    "Approach-menu Completeness wording is live formatting of one AskUserQuestion.",
+  'plan-eng-review-format-coverage':
+    "Coverage-issue Completeness wording is live formatting of one AskUserQuestion.",
+  'plan-eng-review-format-kind':
+    "Kind-note wording is live formatting of one AskUserQuestion.",
+  'plan-ceo-review-prosons-cadence':
+    "Pros/Cons cadence on a hard-stop question is live formatting; either the escape or the full block is accepted.",
+  'plan-review-prosons-format':
+    "The full Pros/Cons block (counts of pros and cons, labels) is live formatting of one question.",
+  'plan-review-prosons-hardstop-neg':
+    "Not using the hard-stop escape on an ordinary decision is live formatting of one question.",
+  'plan-review-prosons-neutral-neg':
+    "Avoiding neutral posture and naming a because-reason is live formatting of one question.",
+  'design-html-slop-gate':
+    "How many scan passes the one-pass slop gate takes on a fake engine's fixed output is a judgment call.",
+  'scrape-match-path':
+    "The /scrape fallback no longer prescribes the browser-skills match flow, so taking it is prompt compliance.",
+  'scrape-prototype-path':
+    "The /scrape fallback no longer prescribes the prototype flow, so taking it is prompt compliance.",
+};

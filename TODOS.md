@@ -2,6 +2,37 @@
 
 ## NEXT PRIORITY
 
+### P1: paid-eval follow-ups from the v1.91.12.0 proof censuses (filed 2026-09-29)
+
+- **Thin budgets on slow API days** — on Claude Code 2.1.284, review-army-perf
+  (274 of 300 s) and the ship-docsync fault cases (250-263 of 285 s) sit at
+  88-93% of their budgets; a slow-API census can time them out on either CLI
+  version. Make those skills faster rather than raising budgets. Effort M.
+- **Recurring reds to repair, not rerun** — `plan-design-review-plan-mode`
+  (one ~250 s thinking block before its single write; times out at 300 s on
+  2.1.251 in every recent run) and the HOLD SCOPE
+  routing case when its next brief happens not to name the mode (see the
+  handoff item below). Effort M each.
+- **`/plan-ceo-review` skips its Step 0E mode handoff** — 0 of 15 answered
+  samples sent the required `Mode: <mode>; approved decisions: …` chat after
+  the mode answer, across four wording repairs (none shipped). The model writes
+  the handoff in its reasoning and later says it was "sent above". A prose fix
+  won't reach it; this needs a mechanism outside the prompt (a hook or a
+  tool-result gate). The HOLD SCOPE routing case fails whenever the handoff is
+  skipped and nothing else names the posture in time. Effort M.
+- **Pre-push hook tests hang behind some shard neighbors** — on the free-suite
+  plan for dfe5e733, `test/redact-prepush-hook.test.ts` timed out 6 of 28 tests
+  at 30 s in shard 12 on two attempts (the hook process was still running and
+  killed as dangling); it passes alone in 9 s and in the next plan's shard 12.
+  One of the 29 files that ran before it only in the failing plan (browse CDP/
+  stealth/tab tests, pty-workspace-trust, heredoc-pipe-deadlock among them)
+  leaves state the hook's blocking path waits on. Reproduce with that shard's
+  plan under xvfb and GSTACK_EXPECT_BINARIES=1. Effort S.
+- **Let pass-rate history decide the rest** — every census on this branch had
+  a different handful of single-trial reds. Once `eval:pass-rates` has 10 weekly
+  trials per case, apply the CASE_QUARANTINE entry rule instead of chasing one
+  run at a time. Effort S.
+
 ### P2/P3: impeccable interop deferrals (filed 2026-09-08, from the CEO + eng reviews of docs/designs/IMPECCABLE_INTEROP.md)
 
 Each item was weighed during the review and deferred with a reason; none blocks
@@ -144,9 +175,10 @@ wave"). Each was explicitly deferred with rationale, not dropped:
 - **#2443 AskUserQuestion numbering redesign** — real mismatch (brief letters
   vs host-rendered numbers), but a prompt-behavior redesign that shifts eval
   baselines; needs its own PR with baseline refresh. Effort S.
-- **#2447 typecheck infra** — tsconfig + repo-wide typecheck script + latent
-  type fixes. High-value, repo-wide blast radius, own PR with bake time.
-  Effort M. Re-derive on current main (several of its fixes landed since).
+- ~~**#2447 typecheck infra**~~ — superseded: the audit fix wave (v1.91.12.0)
+  added `tsconfig.json`, `bun run typecheck` (zero product errors) and the
+  `typecheck:test` ratchet inside the required `free-tests` check, reusing
+  #2447's fixes where they still applied.
 - **#2492 per-project Chromium profile** — needs an on-disk migration story
   for the machine-wide profile default and SingletonLock scoping. Effort M.
 - **#2286 `triggers:` frontmatter** — the Claude Code router never reads the
@@ -833,13 +865,16 @@ and `test/dx-selected-navigation-ap.test.ts`. One shared table run once against 
 only after `engFirstReviewAUQ` checks native completion once at entry; today each branch gates it
 separately, so the change alters a paid verdict and needs its own paid run.
 
-### P3: Re-pin the four remaining claude-opus-4-7 paid files
+### P3: Re-pin the five remaining claude-opus-4-7 paid files
 
 **What:** The 2026-09 audit moved seven paid evals to the default capture model (`resolveEvalModel('capture')`).
 `skill-e2e-design`, `skill-e2e-office-hours-phase4`, `skill-e2e-plan-prosons` and `skill-e2e-plan` keep
 `claude-opus-4-7` because six cases failed on the default model in one run (plan-design-review-plan-mode timeout,
 office-hours-phase4-fork format, plan-review-prosons-neutral-neg missing output, plan-ceo-review-selective and
-plan-eng-review 600 s timeouts, plan-ceo-review-expansion-energy posture score 3). They measure an old model.
+plan-eng-review 600 s timeouts, plan-ceo-review-expansion-energy posture score 3). `skill-e2e-qa-bugs` returned
+to `claude-opus-4-7` after `qa-b6-static` timed out on the default model in two of three runs (census 36597762183
+and a targeted local rerun): each time the stream stopped mid-message, with no pending tool, right after the model
+found the disabled submit button, and emitted nothing until the 300 s case deadline. They measure an old model.
 
 **Re-entry:** fix the prompt, budget or rubric so each case passes on the default model in one run, then drop the pin.
 
@@ -870,7 +905,9 @@ macOS/Aside, no physical iPhone), so the weekly periodic lane scheduled them as
 green shards that verified nothing. They are now in `PERIODIC_CI_EXCLUDE`
 (`test/helpers/periodic-exclude-data.ts`): `codex-e2e`, `codex-e2e-sol-scope`,
 `codex-e2e-shared-libs`, `codex-e2e-recommendation-substance`,
-`skill-e2e-outside-voice`, `skill-e2e-aside`, `skill-e2e-ios-device`. They still
+`skill-e2e-outside-voice`, `skill-e2e-aside`, `skill-e2e-ios-device`. One case
+inside a case-sharded file is excluded the same way through `CASE_CI_EXCLUDE`:
+`test/skill-e2e-design.test.ts#design-review-fix` (needs Aside). They still
 run locally on a machine that has the CLI or device.
 
 **Re-entry:** the CLI or device is available in the CI image. First target:

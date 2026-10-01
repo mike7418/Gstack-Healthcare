@@ -1,5 +1,69 @@
 # Changelog
 
+## [1.91.12.0] - 2026-10-01
+
+**Weekly evals finish in minutes, not hours, and a red now means something.**
+**Two real crash bugs fixed, and product code typechecks clean in CI.**
+
+The weekly paid eval run took 2 hours 45 minutes on Sept 28, almost all of it one timed-out test retried. It now runs every test on its own machine within a 9-minute budget, and a single long case runs one case per process. Automatic retries are gone. Tests that grade a live model's choice run three trials at once and pass on two; promises users rely on (asks before deciding, leaves git alone, no writes in plan mode) fail on any single bad trial. `$B connect --supervise` finally restarts a crashed browser, compiled `/cso` installs can witness runtime-tested assertions again, and a required `typecheck` job keeps that class of bug out.
+
+### The numbers that matter
+
+Source: the Sept 28 weekly census (run 36385945043) and the final proof census on this branch (run 36633323521). `bun run scripts/test-paid-shards.ts --tier periodic --slice-budget 540 --jobs 2 --list` prints the current plan.
+
+| Measure | Before | After |
+| --- | ---: | ---: |
+| Weekly periodic census wall clock | 2h 45m | 11m 42s (gate census alongside: 10m 22s) |
+| Longest planned slice | 160 min (one test, twice) | ~10 min |
+| Automatic retries on paid evals | up to 2 per file | 0 |
+| Product-code type errors | 103 on v1.91.8.0 (no check) | 0, required in `free-tests` |
+| `lib/cso` longest source line | 2,159 chars | 785 (a string literal) |
+
+The biggest change is honesty. With about 240 live cases, a retry used to hide a failing test; now every trial is recorded, `bun run eval:pass-rates` shows each case's pass rate with a confidence range, and a case that slides gets flagged by its history instead of passing on a lucky rerun.
+
+### Fewer rotating reds
+
+Across 11 lanes the PR eval lane failed 6-8 of its 125 records per run, a different handful each time. A census of 1,827 attempts traced most of it to two sources, and this release attacks both instead of retrying:
+
+- **Runs that ran out of time.** Passing runs used 80-92% of their budgets, and the ones that timed out took 20-50% more steps, not slower steps. The heaviest cases now start at the gate they test, from recorded setup and recorded subagent results (docsync faults, shared-libs review, QA callers, Review Army), and land at roughly 35-60% of unchanged budgets.
+- **Bookkeeping the model forgot.** `gstack-qa-evidence` now enforces the checkpoint before every next probe, fills revision/runtime/cwd/learning itself, rejects placeholders, replay-only learning, missing evidence rows and evidence observed on an older input snapshot, prints report links, timing and any declared-but-unrun probes, and answers `--help`. `/deslop-shared-libs` runs every git read through `bin/gstack-safe-git`, which always applies the safety flags.
+
+### What this means for contributors
+
+Run `bun run typecheck` and `bun run typecheck:test` before you push; both are free and take seconds. A red paid run now prints a headline and one line per failure with its cause and a rerun command. New paid evals need a kind in `E2E_KINDS`: see "Add a paid eval" in CONTRIBUTING.md.
+
+### Itemized changes
+
+#### Fixed
+- `$B connect --supervise` respawned with a block-scoped env that no longer existed, so every restart threw and the supervisor gave up after five tries. The headed env is one helper used by connect and respawn, and the loop has behavioral tests.
+- Compiled `/cso` installs called an unimported `join` when launching the assertion-witness child, breaking runtime-tested witnessing for every installed user.
+- Browser-only `/qa` runs had no stated way to build the evidence file, whose rows only accept functional captures; the shared rule now says to materialize an empty evidence list with the checkpoints named in limits, matching `/qa-only`. The fix loop had spent its last minute on it and timed out.
+- `/office-hours` asks its goal question unless the user already chose a mode, then reads that mode's section before its first question; skipping both produced forcing questions with an empty recommendation. `/design-consultation` asks the memorable-thing question on its own after Q1 instead of packing it into Q1's call.
+- Free-form eval judges (docs, outcome, posture) could return JSON broken by an unescaped quote in their reasoning; they now use structured output.
+- `/qa` checkpoint receipts now print the report link for their `exploration-NNN.json` file; reports had been linking `.qa-evidence/NNN` capture folders as checkpoints instead.
+- `/review` Review Army passes checklists to specialists by path and runs web research alongside dispatch (a 12-line N+1 review went from 300 s to 212 s), and the design-lite pass always runs its detector probe; reviews had reported the detector absent without probing in 5 of 6 captured trials.
+- `/design-consultation` opens with one decision (confirm the context and choose research), not a confirm-only question; `/document-release` defines its /ship-owned inputs, exact steps and JSON result.
+- `/review` workflow ambiguities (smoke clock vs required revalidation, setup authority, plan-completion gate, findings record), `/office-hours` builder mode not loading its brainstorm section, `/sync-gbrain` Step 4 helper arguments and write path, `/plan-ceo-review` expansion framing and pacing menus, `/plan-design-review` with no designer API key, and `/deslop-shared-libs` one-file-per-turn reads.
+- Eval detectors that graded wording or step order now grade outcomes: eng batching, CEO split-overflow, mode routing, section-loading stale-fill, outside-voice-disabled attribution, design focus menus, and PTY permission dialogs with cropped titles.
+- Harness races and adapter gaps found by the proof runs: plan seeding accepted a stale empty input box when the CLI repainted after recording its reply, the third-party-actions recorder fixture lost every failure record, the autoplan dual-voice check could not read framed subagent reports from newer Claude Code, and the HOLD SCOPE routing check judged the skill's own defer/keep menu as its rigor decision, the outside-disabled check missed a correctly attributed quote of the pre-existing review record, and the plan-review judge was not told its reason length bound on the field it writes.
+
+#### Changed
+- Paid evals: one test file or case per machine within a 540-second slice budget, planned from recorded per-tier and per-case durations; case sharding for plan, design, review-army, shared-libs, shared-libs-paths, ship-docsync and qa-callers.
+- Verdict policy: no retries; `rule` cases fail on any failed trial, `behavior` cases pass on 2 of 3 parallel trials with contract assertions still strict, `judge` entries average 3 samples against unchanged thresholds. One panel-verdict function feeds the report, PR comment, weekly issue and pass-rate history. A census whose every red is infrastructure is re-dispatched once, and both runs are reported.
+- New non-blocking weekly `evals-marathon.yml` lane for full start-to-finish flows: the full `/office-hours` workflow (a focused design-draft case replaces it in the weekly lane) and the full `/plan-ceo-review` split-overflow run, which took 8 to 20 minutes on its own.
+- The CI image pins Claude Code 2.1.284, the first version that recognizes the eval model `claude-fable-5-1` and runs it with the same profile users get. Both versions send effort "high"; a census that looked slower on 2.1.284 was mostly slower API responses (its SDK-only judges, which never start the CLI, were 25% slower too), and nine previously slow cases pass on 2.1.284 within unchanged budgets.
+- `lib/cso/*.ts` is formatted with pinned Prettier; minified transpile output is byte-identical except three canonicalized regex flag orders.
+- The duplicate dispatch-only `ship-docsync` case is removed; `ship-docsync-completion` asserts the same on the same fixture.
+
+#### Added
+- `tsconfig.json`, `bun run typecheck` (strict, zero product errors) and `bun run typecheck:test` (test-code diagnostic ratchet), both in the required `free-tests` check, plus `format:cso:check`.
+- `E2E_KINDS`, `BEHAVIOR_WHY`, `EVAL_POLICY` and a data-driven `CASE_QUARANTINE` (entry below 95% per trial over 10 trials, exit at 97%, 10% cap, 8-week expiry, never for product defects), and `CASE_CI_EXCLUDE` for CI-unrunnable cases.
+- `bun run eval:pass-rates` with Wilson intervals, per-input-identity series and a weekly drift gate; `--case <id> --trials N` for local diagnosis.
+
+#### For contributors
+- Open PRs touching `lib/cso` should run `bun run format:cso` before rebasing.
+- Builds on the typecheck work in #2447, contributed by @laddtnov.
+- Coordinated with #2994 (v1.91.8.0), which retired the never-green finding-count evals this wave had been repairing.
 ## [1.91.11.0] - 2026-09-30
 
 gstack now looks up its state folder one way everywhere, and the five most copy-pasted or oversized parts of the codebase each have a single owner. Before, about 50 scripts, hooks and libraries each resolved the state folder with their own rule, and the rules disagreed. If you set `GSTACK_HOME`, `GSTACK_STATE_DIR` or `GSTACK_STATE_ROOT`, telemetry, analytics, update-check snoozes, the egress ledger and hook logs now all land in the folder you chose. Nothing is moved for you. Run `~/.claude/skills/gstack/bin/gstack-paths --explain` to see the active folder and whether `~/.gstack` still holds older state; [docs/state-root.md](docs/state-root.md) has the move recipe.

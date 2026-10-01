@@ -19,9 +19,9 @@ export { isProseAUQVisible, isScopeGateQuestionVisible, isScopeGateAutoSelectVis
 export type { ClassifyResult } from './pty/classify';
 export { nativePlanCallFingerprint, planCountQuestionPhase, parseQuestionPrompt, auqFingerprint, planCountQuestionInput, matchesNativePlanQuestion, capturePlanCountQuestion, createPlanCountPermissionGuard, planCountPrerequisitePick } from './pty/auq';
 export type { AskUserQuestionFingerprint, Step0BoundaryPredicate } from './pty/auq';
-export { assertReviewReportAtBottom, hasNativePlanCompletion, isQuestionlessNativePlanExit, evaluateOwnedNativePlanTerminal, hasNativePlanTerminal, assertReportAtBottomIfPlanWritten } from './pty/plan-native';
+export { assertReviewReportAtBottom, hasCompletePlanReport, hasNativePlanCompletion, isQuestionlessNativePlanExit, evaluateOwnedNativePlanTerminal, hasNativePlanTerminal, assertReportAtBottomIfPlanWritten } from './pty/plan-native';
 export type { ReviewReportAtBottomResult, NativePlanTerminalReview, NativePlanTerminalAssessment, NativePlanTerminalEvaluator } from './pty/plan-native';
-export { ceoStep0Boundary, engSetupAUQ, engFirstReviewAUQ, engStep0Boundary, designReviewSetupAUQ } from './pty/boundaries';
+export { ceoStep0Boundary, engSetupAUQ, engFirstReviewAUQ, engStep0Boundary, pickDesignFocusAll } from './pty/boundaries';
 export { runPlanSkillObservation } from './pty/runners/observation';
 export type { PlanSkillObservation, PlanSkillObservationOptions } from './pty/runners/observation';
 export { runPlanSkillCounting, countingCapture, isNativeCompletionSummary } from './pty/runners/counting';

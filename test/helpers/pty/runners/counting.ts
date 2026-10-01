@@ -221,7 +221,7 @@ export async function runPlanSkillCounting(opts: PlanSkillCountingOptions): Prom
     seen: new Set(), countedCalls: new Set(), filePermission: createPlanCountPermissionGuard(), ownedFilePermissions: [],
     lastMatchedNativeQuestion: undefined, transcript: { status: 'missing', calls: [], assistantMessages: [] },
     boundaryFired: false, step0Count: 0, reviewCount: 0, administrativeCount: 0, isFirstAUQ: true,
-    lastCheckpointAt: 0, viewport: '', observedOutput: 0, lastObservationAt: -Infinity,
+    lastCheckpointAt: 0, viewport: '', observedOutput: 0, lastObservationAt: -Infinity, lastOutputAt: driver.now(),
   };
   const permissionPaths = [
     ...(opts.expectedPlanPath ? [opts.expectedPlanPath, path.join(fixture.cwd, 'PLAN.md')] : []),
@@ -253,7 +253,8 @@ export async function runPlanSkillCounting(opts: PlanSkillCountingOptions): Prom
     poll: session => countingPoll(run, session),
     tick: session => countingTick(run, session),
     timeout: session => countingSnapshot(run, session, 'timeout',
-      `no terminal outcome within ${timeoutMs}ms total budget (including startup and ${cleanupReserveMs}ms cleanup reserve; step0=${run.step0Count}, review=${run.reviewCount})`,
+      `no terminal outcome within ${timeoutMs}ms total budget (including startup and ${cleanupReserveMs}ms cleanup reserve; step0=${run.step0Count}, review=${run.reviewCount}); ` +
+        `idleFor=${run.driver.now() - run.lastOutputAt}ms`,
       run.viewport),
     onError: (session, error) => countingFailure(run, session, error),
     onCloseError: (session, error) => {
@@ -294,6 +295,8 @@ export interface CountingRun {
   viewport: string;
   observedOutput: number;
   lastObservationAt: number;
+  /** Wall time of the last new PTY output; the timeout summary reports the idle span. */
+  lastOutputAt: number;
 }
 
 function remainingWork(run: CountingRun): number {
@@ -388,6 +391,7 @@ async function countingPoll(run: CountingRun, session: ClaudePtySession): Promis
   if (remainingWork(run) <= 0) return false;
   await session.waitForOutput(run.observedOutput, Math.min(2000, remainingWork(run)));
   if (remainingWork(run) <= 0) return false;
+  if (session.rawOutput().length > run.observedOutput) run.lastOutputAt = run.driver.now();
   const coalesceMs = session.rawOutput().length > run.observedOutput
     ? 250 : 250 - (run.driver.monotonic() - run.lastObservationAt);
   if (coalesceMs > 0 && !await waitForWork(run, coalesceMs)) return false;
